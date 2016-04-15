@@ -1,0 +1,8 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: tams_ur5_setup_description
+    relative_path: urdf/tams_ur5_setup.urdf.xacro
+  SRDF:
+    relative_path: config/tams_ur5_setup.srdf
+  CONFIG:
+    generated_timestamp: 1460563210
