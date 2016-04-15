@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package>
+  <name>tams_ur5_setup_bringup</name>
+  <version>0.0.0</version>
+  <description>Launch files for TAMS' UR5 laboratory setup</description>
+
+  <maintainer email="goerner@iformatik.uni-hamburg.de">Michael Goerner</maintainer>
+  <author email="5jonetzk@informatik.uni-hamburg.de">Yannick Jonetzko</author>  
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+</package>
