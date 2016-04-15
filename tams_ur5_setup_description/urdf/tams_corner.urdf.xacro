@@ -1,0 +1,281 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"
+       name="tams_corner" > 
+  <xacro:property name="roomheight" value="3.0" />
+
+  <material name="white">
+    <color rgba="1 1 1 1"/>
+  </material>
+  <material name="brown">
+    <color rgba="0.87 0.72 0.53 1"/>
+  </material>
+  <material name="lightgray">
+    <color rgba="0.6 0.6 0.6 1"/>
+  </material>
+  <link name="floor">
+    <inertial>
+      <origin xyz="2.5 2.5 0" />
+      <mass value="2000" />
+      <inertia  ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+    </inertial>
+    <visual>
+      <material name="black" />
+      <origin xyz="2.5 2.5 0" />
+      <geometry>
+        <box size="5.0 5.0 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="2.5 2.5 0" />
+      <geometry>
+      <box size="5.0 5.0 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="floor">
+    <material>Gazebo/Blue</material>
+    <turnGravityOff>false</turnGravityOff>
+    <selfCollide>true</selfCollide>
+    <!-- kp: stiffness kd: damping mu1, mu2: friction -->
+    <mu1>100.0</mu1>
+    <mu2>100.0</mu2>
+    <kp>1000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <link name="wall">
+    <inertial>
+      <origin xyz="-0.06 2.5 1.5" />
+      <mass value="2000" />
+      <inertia  ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+    </inertial>
+    <visual>
+      <material name="white" />
+      <origin xyz="-0.06 2.5 1.5" />
+      <geometry>
+        <box size="0.12 5.0 3.0" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.06 2.5 1.5" />
+      <geometry>
+        <box size="0.12 5.0 3.0" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="wall">
+    <material>Gazebo/Blue</material>
+    <turnGravityOff>false</turnGravityOff>
+    <selfCollide>true</selfCollide>
+    <!-- kp: stiffness kd: damping mu1, mu2: friction -->
+    <mu1>100.0</mu1>
+    <mu2>100.0</mu2>
+    <kp>1000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <link name="side_wall">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="2000" />
+      <inertia  ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+    </inertial>
+    <visual>
+      <material name="white" />
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="5.0 0.12 3.0" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.0" />
+      <geometry>
+        <box size="5.0 0.12 3.0" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="side_wall">
+    <material>Gazebo/Blue</material>
+    <turnGravityOff>false</turnGravityOff>
+    <selfCollide>true</selfCollide>
+    <!-- kp: stiffness kd: damping mu1, mu2: friction -->
+    <mu1>100.0</mu1>
+    <mu2>100.0</mu2>
+    <kp>1000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+
+  
+
+
+
+  <link name="small_wall">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="2000" />
+      <inertia  ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+    </inertial>
+    <visual>
+      <material name="white" />
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.19 0.165 3.0" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.0" />
+      <geometry>
+        <box size="0.19 0.165 3.0" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="small_wall">
+    <material>Gazebo/Blue</material>
+    <turnGravityOff>false</turnGravityOff>
+    <selfCollide>true</selfCollide>
+    <!-- kp: stiffness kd: damping mu1, mu2: friction -->
+    <mu1>100.0</mu1>
+    <mu2>100.0</mu2>
+    <kp>1000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+
+  <link name="table">
+    <inertial>
+      <origin xyz="0 0 0.365" />
+      <mass value="10" />
+      <inertia  ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+    </inertial>
+    <visual>
+      <material name="brown" />
+      <origin xyz="0 0 0.365" />
+      <geometry>
+        <box size="0.67 0.67 0.73" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.365" />
+      <geometry>
+        <box size="0.67 0.67 0.73" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="table">
+    <material>Gazebo/Blue</material>
+    <turnGravityOff>false</turnGravityOff>
+    <selfCollide>true</selfCollide>
+    <!-- kp: stiffness kd: damping mu1, mu2: friction -->
+    <mu1>100.0</mu1>
+    <mu2>100.0</mu2>
+    <kp>1000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+
+  <link name="shelf">
+    <inertial>
+      <origin xyz="1.7 0 0" />
+      <mass value="60" />
+      <inertia  ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+    </inertial>
+    <visual>
+      <material name="lightgray" />
+      <origin xyz="0 1.7 0" />
+      <geometry>
+        <box size="0.4 2 2.5" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 1.7 0" />
+      <geometry>
+        <box size="0.4 2 2.5" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="shelf">
+    <material>Gazebo/Orange</material>
+    <turnGravityOff>false</turnGravityOff>
+    <selfCollide>true</selfCollide>
+    <!-- kp: stiffness kd: damping mu1, mu2: friction -->
+    <mu1>100.0</mu1>
+    <mu2>100.0</mu2>
+    <kp>1000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+
+
+  <link name="april_tag_ur5">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="2000" />
+      <inertia  ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+    </inertial>
+    <visual>
+      <material name="black" />
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.01 0.166 0.166" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.0" />
+      <geometry>
+        <box size="0.01 0.166 0.166" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="april_tag_ur5">
+    <material>Gazebo/Blue</material>
+    <turnGravityOff>false</turnGravityOff>
+    <selfCollide>true</selfCollide>
+    <mu1>100.0</mu1>
+    <mu2>100.0</mu2>
+    <kp>1000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+
+
+  <joint name="floor_wall_joint" type="fixed">
+    <parent link="floor"/>
+    <child link="wall"/>
+    <!-- The actual wall in the lab is slightly tilted, the rotation compensates approx 1 deg -->
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <!--<origin xyz="0 0 0" rpy="0 -0.017 0" />-->
+  </joint>
+
+  <joint name="side_wall_joint" type="fixed">
+    <parent link="floor"/>
+    <child link="side_wall"/>
+    <!--<origin xyz="2.5 -0.06 1.5" rpy="0 0 0" />-->
+    <origin xyz="2.5 -0.225 1.5" rpy="0 0 0" />
+  </joint>
+  
+  <joint name="small_wall_joint" type="fixed">
+    <parent link="floor"/>
+    <child link="small_wall"/>
+    <!--<origin xyz="2.5 -0.06 1.5" rpy="0 0 0" />-->
+    <origin xyz="0.095 -0.0825 1.5" rpy="0 0 0" />
+  </joint>
+
+  <joint name="table_joint" type="fixed">
+    <parent link="floor"/>
+    <child link="table"/>
+    <!-- actual wall is 2.5cm further back from table, but is modelled at the position of the small ur5 adapter plate -->
+    <origin xyz="0.58 0.23 0" rpy="0 0 0" />
+  </joint>
+
+  <joint name="shelf_joint" type="fixed">
+    <parent link="floor"/>
+    <child link="shelf"/>
+    <!-- actual shelf is a little smaller -->
+    <origin xyz="0.2 1 1.25" rpy="0 0 0" />
+  </joint>
+
+ 
+   <joint name="apriltag_ur5_joint" type="fixed">
+    <parent link="wall" />
+    <child link = "april_tag_ur5" />
+    <!--<origin xyz="0.06 -1.75 -0.23" rpy="0.0 0.0 0.0" />-->
+    <origin xyz="-0.01 0.75 1.27" rpy="0.0 0.0 0.0" /> <!-- offset relative to the tilted wall -->
+  </joint>
+
+
+
+</robot>
