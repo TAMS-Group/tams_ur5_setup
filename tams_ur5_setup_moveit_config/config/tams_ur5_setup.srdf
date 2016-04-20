@@ -25,10 +25,10 @@
         <link name="finger_middle_link_3" />
     </group>
     <group name="UR5_arm">
-        <chain base_link="base_link" tip_link="ft_fts_toolside" />
+        <chain base_link="base_link" tip_link="ee_link" />
     </group>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="eef" parent_link="ft_fts_toolside" group="gripper" parent_group="UR5_arm" />
+    <end_effector name="eef" parent_link="ee_link" group="gripper" parent_group="UR5_arm" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="april_tag_ur5" link2="base_link" reason="Never" />
     <disable_collisions link1="april_tag_ur5" link2="ee_link" reason="User" />
