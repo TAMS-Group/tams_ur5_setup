@@ -52,6 +52,14 @@
         <joint name="wrist_2_joint" value="1.5708" />
         <joint name="wrist_3_joint" value="0" />
     </group_state>
+    <group_state name="start_grab_pose" group="UR5_arm">
+        <joint name="elbow_joint" value="-1.392" />
+        <joint name="shoulder_lift_joint" value="-0.4279" />
+        <joint name="shoulder_pan_joint" value="1.7597" />
+        <joint name="wrist_1_joint" value="-1.3206" />
+        <joint name="wrist_2_joint" value="1.3816" />
+        <joint name="wrist_3_joint" value="1.57078" />
+    </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="eef" parent_link="ee_link" group="gripper" parent_group="UR5_arm" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
