@@ -143,12 +143,13 @@
       <material name="lightgray" />
       <origin xyz="0 0 0" />
       <geometry>
-        <box size="0.13 0.08 ${roomheight}" />
+        <box size="0.13 0.06 ${roomheight}" />
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0 0 0.0" />
+      <origin xyz="0 0 0" />
       <geometry>
+        <!-- the collision model is 2cm wider then the actual duct, because of an unmodelled ethernet port -->
         <box size="0.13 0.08 ${roomheight}" />
       </geometry>
     </collision>
@@ -283,7 +284,7 @@
   <joint name="cable_duct_joint" type="fixed">
     <parent link="floor"/>
     <child link="cable_duct"/>
-    <origin xyz="0.375 -0.125 ${roomheight/2}" rpy="0 0 0" />
+    <origin xyz="0.375 -0.135 ${roomheight/2}" rpy="0 0 0" />
   </joint>
 
   <joint name="table_joint" type="fixed">
