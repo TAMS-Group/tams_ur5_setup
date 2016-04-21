@@ -24,6 +24,9 @@
         <link name="finger_middle_link_2" />
         <link name="finger_middle_link_3" />
     </group>
+    <group name="UR5_arm">
+        <chain base_link="base_link" tip_link="ee_link" />
+    </group>
     <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
     <group_state name="home" group="UR5_arm">
         <joint name="elbow_joint" value="0" />
@@ -49,15 +52,11 @@
         <joint name="wrist_2_joint" value="1.5708" />
         <joint name="wrist_3_joint" value="0" />
     </group_state>
-    <group name="UR5_arm">
-<!-- <chain base_link="base_link" tip_link="ft_fts_toolside" /> -->
-        <chain base_link="base_link" tip_link="ee_link" />
-    </group>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-<!-- <end_effector name="eef" parent_link="ft_fts_toolside" group="gripper" parent_group="UR5_arm" /> -->
     <end_effector name="eef" parent_link="ee_link" group="gripper" parent_group="UR5_arm" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="april_tag_ur5" link2="base_link" reason="Never" />
+    <disable_collisions link1="april_tag_ur5" link2="cable_duct" reason="User" />
     <disable_collisions link1="april_tag_ur5" link2="ee_link" reason="User" />
     <disable_collisions link1="april_tag_ur5" link2="finger_1_link_0" reason="User" />
     <disable_collisions link1="april_tag_ur5" link2="finger_1_link_1" reason="User" />
@@ -85,6 +84,7 @@
     <disable_collisions link1="april_tag_ur5" link2="wrist_1_link" reason="User" />
     <disable_collisions link1="april_tag_ur5" link2="wrist_2_link" reason="User" />
     <disable_collisions link1="april_tag_ur5" link2="wrist_3_link" reason="User" />
+    <disable_collisions link1="base_link" link2="cable_duct" reason="User" />
     <disable_collisions link1="base_link" link2="ee_link" reason="User" />
     <disable_collisions link1="base_link" link2="floor" reason="Never" />
     <disable_collisions link1="base_link" link2="shelf" reason="Never" />
@@ -94,6 +94,14 @@
     <disable_collisions link1="base_link" link2="table" reason="Never" />
     <disable_collisions link1="base_link" link2="upper_arm_link" reason="User" />
     <disable_collisions link1="base_link" link2="wall" reason="Adjacent" />
+    <disable_collisions link1="cable_duct" link2="floor" reason="User" />
+    <disable_collisions link1="cable_duct" link2="shelf" reason="User" />
+    <disable_collisions link1="cable_duct" link2="shoulder_link" reason="User" />
+    <disable_collisions link1="cable_duct" link2="side_wall" reason="User" />
+    <disable_collisions link1="cable_duct" link2="small_wall" reason="User" />
+    <disable_collisions link1="cable_duct" link2="table" reason="User" />
+    <disable_collisions link1="cable_duct" link2="upper_arm_link" reason="User" />
+    <disable_collisions link1="cable_duct" link2="wall" reason="User" />
     <disable_collisions link1="ee_link" link2="finger_1_link_0" reason="Never" />
     <disable_collisions link1="ee_link" link2="finger_1_link_1" reason="Never" />
     <disable_collisions link1="ee_link" link2="finger_1_link_2" reason="Never" />

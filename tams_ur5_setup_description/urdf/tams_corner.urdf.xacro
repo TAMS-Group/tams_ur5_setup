@@ -103,11 +103,6 @@
     <kp>1000000.0</kp>
     <kd>1.0</kd>
   </gazebo>
-
-  
-
-
-
   <link name="small_wall">
     <inertial>
       <origin xyz="0 0 0" />
@@ -129,6 +124,36 @@
     </collision>
   </link>
   <gazebo reference="small_wall">
+    <material>Gazebo/Blue</material>
+    <turnGravityOff>false</turnGravityOff>
+    <selfCollide>true</selfCollide>
+    <!-- kp: stiffness kd: damping mu1, mu2: friction -->
+    <mu1>100.0</mu1>
+    <mu2>100.0</mu2>
+    <kp>1000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <link name="cable_duct">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="2000" />
+      <inertia  ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+    </inertial>
+    <visual>
+      <material name="lightgray" />
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.13 0.08 ${roomheight}" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.0" />
+      <geometry>
+        <box size="0.13 0.08 ${roomheight}" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="cable_duct">
     <material>Gazebo/Blue</material>
     <turnGravityOff>false</turnGravityOff>
     <selfCollide>true</selfCollide>
@@ -252,7 +277,13 @@
     <parent link="floor"/>
     <child link="small_wall"/>
     <!--<origin xyz="2.5 -0.06 1.5" rpy="0 0 0" />-->
-    <origin xyz="0.095 -0.0825 1.5" rpy="0 0 0" />
+    <origin xyz="0.07 -0.0825 1.5" rpy="0 0 0" />
+  </joint>
+
+  <joint name="cable_duct_joint" type="fixed">
+    <parent link="floor"/>
+    <child link="cable_duct"/>
+    <origin xyz="0.375 -0.125 ${roomheight/2}" rpy="0 0 0" />
   </joint>
 
   <joint name="table_joint" type="fixed">
