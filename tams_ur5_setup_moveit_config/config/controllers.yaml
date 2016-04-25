@@ -1,5 +1,6 @@
 controller_list:
  - name: follow_joint_trajectory
+   action_ns: ""
    type: FollowJointTrajectory
    joints:
       - shoulder_pan_joint
