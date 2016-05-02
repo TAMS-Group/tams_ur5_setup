@@ -23,13 +23,13 @@
       <material name="black" />
       <origin xyz="2.5 2.5 0" />
       <geometry>
-        <box size="5.0 5.0 0.001" />
+        <box size="5.0 5.33 0.001" />
       </geometry>
     </visual>
     <collision>
       <origin xyz="2.5 2.5 0" />
       <geometry>
-      <box size="5.0 5.0 0.001" />
+      <box size="5.0 5.33 0.001" />
       </geometry>
     </collision>
   </link>
