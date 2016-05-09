@@ -5,11 +5,6 @@
 
   <include file="$(find tams_ur5_setup_description)/launch/tams_ur5_setup_upload.launch"/>
 
-  <param name="/camera/driver/data_skip" value="10" />
-  <include file="$(find openni2_launch)/launch/openni2.launch">
-    <arg name="depth_registration" value="true"/>
-    <arg name="color_depth_synchronization" value="true"/>
-  </include>
+  <include file="$(find tams_ur5_setup_bringup)/launch/camera.launch"/>
 
-  <include file="$(find camera_positioner)/launch/camera_positioner.launch"/>
 </launch>
