@@ -35,9 +35,6 @@ public:
          try {
             listener.waitForTransform("/world", "/april_tag_ur5", ros::Time(0), ros::Duration(5.0) );
             listener.lookupTransform("/world", "/april_tag_ur5", ros::Time(0), world_tag_transform);
-            tf::Quaternion q;
-           // q.setRPY(1.57079,0,1.57079);
-           // world_tag_transform.setRotation(q);
             break;
          }
          catch(...){}

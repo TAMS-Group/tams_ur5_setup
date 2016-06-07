@@ -95,7 +95,9 @@
     <disable_collisions link1="april_tag_ur5" link2="ee_link" reason="User" />
     <disable_collisions link1="april_tag_ur5" link2="floor" reason="Never" />
     <disable_collisions link1="april_tag_ur5" link2="forearm_link" reason="User" />
+    <disable_collisions link1="april_tag_ur5" link2="ft_adapter" reason="User" />
     <disable_collisions link1="april_tag_ur5" link2="ft_fts_robotside" reason="User" />
+    <disable_collisions link1="april_tag_ur5" link2="s_model_adapter" reason="User" />
     <disable_collisions link1="april_tag_ur5" link2="s_model_finger_1_link_0" reason="User" />
     <disable_collisions link1="april_tag_ur5" link2="s_model_finger_1_link_1" reason="User" />
     <disable_collisions link1="april_tag_ur5" link2="s_model_finger_1_link_2" reason="User" />
@@ -121,6 +123,7 @@
     <disable_collisions link1="april_tag_ur5" link2="wrist_3_link" reason="User" />
     <disable_collisions link1="base_link" link2="cable_duct" reason="Never" />
     <disable_collisions link1="base_link" link2="floor" reason="Never" />
+    <disable_collisions link1="base_link" link2="s_model_adapter" reason="User" />
     <disable_collisions link1="base_link" link2="shelf" reason="Never" />
     <disable_collisions link1="base_link" link2="shoulder_link" reason="Adjacent" />
     <disable_collisions link1="base_link" link2="side_wall" reason="Never" />
@@ -131,6 +134,8 @@
     <disable_collisions link1="cable_duct" link2="ee_link" reason="Never" />
     <disable_collisions link1="cable_duct" link2="floor" reason="Adjacent" />
     <disable_collisions link1="cable_duct" link2="forearm_link" reason="Never" />
+    <disable_collisions link1="cable_duct" link2="ft_adapter" reason="User" />
+    <disable_collisions link1="cable_duct" link2="s_model_adapter" reason="User" />
     <disable_collisions link1="cable_duct" link2="shelf" reason="Never" />
     <disable_collisions link1="cable_duct" link2="shoulder_link" reason="Never" />
     <disable_collisions link1="cable_duct" link2="side_wall" reason="Default" />
@@ -140,7 +145,9 @@
     <disable_collisions link1="cable_duct" link2="wall" reason="Never" />
     <disable_collisions link1="cable_duct" link2="wrist_1_link" reason="Never" />
     <disable_collisions link1="ee_link" link2="floor" reason="Never" />
+    <disable_collisions link1="ee_link" link2="ft_adapter" reason="User" />
     <disable_collisions link1="ee_link" link2="ft_fts_robotside" reason="Adjacent" />
+    <disable_collisions link1="ee_link" link2="s_model_adapter" reason="User" />
     <disable_collisions link1="ee_link" link2="s_model_finger_1_link_0" reason="Never" />
     <disable_collisions link1="ee_link" link2="s_model_finger_1_link_1" reason="Never" />
     <disable_collisions link1="ee_link" link2="s_model_finger_1_link_2" reason="Never" />
@@ -160,7 +167,9 @@
     <disable_collisions link1="ee_link" link2="wrist_2_link" reason="Never" />
     <disable_collisions link1="ee_link" link2="wrist_3_link" reason="Adjacent" />
     <disable_collisions link1="floor" link2="forearm_link" reason="Never" />
+    <disable_collisions link1="floor" link2="ft_adapter" reason="User" />
     <disable_collisions link1="floor" link2="ft_fts_robotside" reason="Never" />
+    <disable_collisions link1="floor" link2="s_model_adapter" reason="User" />
     <disable_collisions link1="floor" link2="shelf" reason="Adjacent" />
     <disable_collisions link1="floor" link2="shoulder_link" reason="Never" />
     <disable_collisions link1="floor" link2="side_wall" reason="Adjacent" />
@@ -171,10 +180,39 @@
     <disable_collisions link1="floor" link2="wrist_1_link" reason="Never" />
     <disable_collisions link1="floor" link2="wrist_2_link" reason="Never" />
     <disable_collisions link1="floor" link2="wrist_3_link" reason="Never" />
+    <disable_collisions link1="forearm_link" link2="ft_adapter" reason="User" />
+    <disable_collisions link1="forearm_link" link2="s_model_adapter" reason="User" />
     <disable_collisions link1="forearm_link" link2="shelf" reason="Never" />
     <disable_collisions link1="forearm_link" link2="side_wall" reason="Never" />
     <disable_collisions link1="forearm_link" link2="upper_arm_link" reason="Adjacent" />
     <disable_collisions link1="forearm_link" link2="wrist_1_link" reason="Adjacent" />
+    <disable_collisions link1="ft_adapter" link2="ft_adapter" reason="User" />
+    <disable_collisions link1="ft_adapter" link2="ft_fts_robotside" reason="User" />
+    <disable_collisions link1="ft_adapter" link2="s_model_adapter" reason="User" />
+    <disable_collisions link1="ft_adapter" link2="s_model_finger_1_link_0" reason="User" />
+    <disable_collisions link1="ft_adapter" link2="s_model_finger_1_link_1" reason="User" />
+    <disable_collisions link1="ft_adapter" link2="s_model_finger_1_link_2" reason="User" />
+    <disable_collisions link1="ft_adapter" link2="s_model_finger_1_link_3" reason="User" />
+    <disable_collisions link1="ft_adapter" link2="s_model_finger_2_link_0" reason="User" />
+    <disable_collisions link1="ft_adapter" link2="s_model_finger_2_link_1" reason="User" />
+    <disable_collisions link1="ft_adapter" link2="s_model_finger_2_link_2" reason="User" />
+    <disable_collisions link1="ft_adapter" link2="s_model_finger_2_link_3" reason="User" />
+    <disable_collisions link1="ft_adapter" link2="s_model_finger_middle_link_0" reason="User" />
+    <disable_collisions link1="ft_adapter" link2="s_model_finger_middle_link_1" reason="User" />
+    <disable_collisions link1="ft_adapter" link2="s_model_finger_middle_link_2" reason="User" />
+    <disable_collisions link1="ft_adapter" link2="s_model_finger_middle_link_3" reason="User" />
+    <disable_collisions link1="ft_adapter" link2="s_model_palm" reason="User" />
+    <disable_collisions link1="ft_adapter" link2="shelf" reason="User" />
+    <disable_collisions link1="ft_adapter" link2="shoulder_link" reason="User" />
+    <disable_collisions link1="ft_adapter" link2="side_wall" reason="User" />
+    <disable_collisions link1="ft_adapter" link2="small_wall" reason="User" />
+    <disable_collisions link1="ft_adapter" link2="table" reason="User" />
+    <disable_collisions link1="ft_adapter" link2="upper_arm_link" reason="User" />
+    <disable_collisions link1="ft_adapter" link2="wall" reason="User" />
+    <disable_collisions link1="ft_adapter" link2="wrist_1_link" reason="User" />
+    <disable_collisions link1="ft_adapter" link2="wrist_2_link" reason="User" />
+    <disable_collisions link1="ft_adapter" link2="wrist_3_link" reason="User" />
+    <disable_collisions link1="ft_fts_robotside" link2="s_model_adapter" reason="User" />
     <disable_collisions link1="ft_fts_robotside" link2="s_model_finger_1_link_0" reason="Never" />
     <disable_collisions link1="ft_fts_robotside" link2="s_model_finger_1_link_1" reason="Never" />
     <disable_collisions link1="ft_fts_robotside" link2="s_model_finger_1_link_2" reason="Never" />
@@ -192,6 +230,29 @@
     <disable_collisions link1="ft_fts_robotside" link2="wrist_1_link" reason="Never" />
     <disable_collisions link1="ft_fts_robotside" link2="wrist_2_link" reason="Never" />
     <disable_collisions link1="ft_fts_robotside" link2="wrist_3_link" reason="Default" />
+    <disable_collisions link1="s_model_adapter" link2="s_model_finger_1_link_0" reason="User" />
+    <disable_collisions link1="s_model_adapter" link2="s_model_finger_1_link_1" reason="User" />
+    <disable_collisions link1="s_model_adapter" link2="s_model_finger_1_link_2" reason="User" />
+    <disable_collisions link1="s_model_adapter" link2="s_model_finger_1_link_3" reason="User" />
+    <disable_collisions link1="s_model_adapter" link2="s_model_finger_2_link_0" reason="User" />
+    <disable_collisions link1="s_model_adapter" link2="s_model_finger_2_link_1" reason="User" />
+    <disable_collisions link1="s_model_adapter" link2="s_model_finger_2_link_2" reason="User" />
+    <disable_collisions link1="s_model_adapter" link2="s_model_finger_2_link_3" reason="User" />
+    <disable_collisions link1="s_model_adapter" link2="s_model_finger_middle_link_0" reason="User" />
+    <disable_collisions link1="s_model_adapter" link2="s_model_finger_middle_link_1" reason="User" />
+    <disable_collisions link1="s_model_adapter" link2="s_model_finger_middle_link_2" reason="User" />
+    <disable_collisions link1="s_model_adapter" link2="s_model_finger_middle_link_3" reason="User" />
+    <disable_collisions link1="s_model_adapter" link2="s_model_palm" reason="User" />
+    <disable_collisions link1="s_model_adapter" link2="shelf" reason="User" />
+    <disable_collisions link1="s_model_adapter" link2="shoulder_link" reason="User" />
+    <disable_collisions link1="s_model_adapter" link2="side_wall" reason="User" />
+    <disable_collisions link1="s_model_adapter" link2="small_wall" reason="User" />
+    <disable_collisions link1="s_model_adapter" link2="table" reason="User" />
+    <disable_collisions link1="s_model_adapter" link2="upper_arm_link" reason="User" />
+    <disable_collisions link1="s_model_adapter" link2="wall" reason="User" />
+    <disable_collisions link1="s_model_adapter" link2="wrist_1_link" reason="User" />
+    <disable_collisions link1="s_model_adapter" link2="wrist_2_link" reason="User" />
+    <disable_collisions link1="s_model_adapter" link2="wrist_3_link" reason="User" />
     <disable_collisions link1="s_model_finger_1_link_0" link2="s_model_finger_1_link_1" reason="Adjacent" />
     <disable_collisions link1="s_model_finger_1_link_0" link2="s_model_finger_1_link_2" reason="Never" />
     <disable_collisions link1="s_model_finger_1_link_0" link2="s_model_finger_1_link_3" reason="Never" />
