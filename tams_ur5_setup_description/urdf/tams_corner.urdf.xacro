@@ -3,7 +3,8 @@
        name="tams_corner" > 
   <xacro:property name="roomheight" value="3.0" />
   <xacro:property name="pi" value="3.1415926535897931" />
- 
+  <xacro:property name="tableheight" value="0.74" />
+
   <material name="white">
     <color rgba="1 1 1 1"/>
   </material>
@@ -167,21 +168,21 @@
 
   <link name="table">
     <inertial>
-      <origin xyz="0 0 0.37" />
+      <origin xyz="0 0 ${tableheight/2}" />
       <mass value="10" />
       <inertia  ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
     </inertial>
     <visual>
       <material name="brown" />
-      <origin xyz="0 0 0.37" />
+      <origin xyz="0 0 ${tableheight/2}" />
       <geometry>
-        <box size="1.0 0.80 0.74" />
+        <box size="1.0 0.80 ${tableheight}" />
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0 0 0.37" />
+      <origin xyz="0 0 ${tableheight/2}" />
       <geometry>
-        <box size="1.0 0.80 0.74" />
+        <box size="1.0 0.80 ${tableheight}" />
       </geometry>
     </collision>
   </link>
@@ -195,6 +196,8 @@
     <kp>1000000.0</kp>
     <kd>1.0</kd>
   </gazebo>
+
+  <link name="table_top"/>
 
   <link name="shelf">
     <inertial>
@@ -292,6 +295,12 @@
     <child link="table"/>
     <!-- actual wall is 2.5cm further back from table, but is modelled at the position of the small ur5 adapter plate -->
     <origin xyz="0.73 0.30 0" rpy="0 0 0" />
+  </joint>
+
+  <joint name="table_top_joint" type="fixed">
+    <parent link="table"/>
+    <child link="table_top"/>
+    <origin xyz="0 0 ${tableheight}" rpy="0 0 0"/>
   </joint>
 
   <joint name="shelf_joint" type="fixed">
