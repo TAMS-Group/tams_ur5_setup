@@ -65,7 +65,7 @@ gripper:
     - TRRTkConfigDefault
     - PRMkConfigDefault
     - PRMstarkConfigDefault
-UR5_arm:
+arm:
   default_planner_config: BKPIECEkConfigDefault
   planner_configs:
     - SBLkConfigDefault

@@ -5,4 +5,4 @@ moveit_setup_assistant_config:
   SRDF:
     relative_path: config/tams_ur5_setup.srdf
   CONFIG:
-    generated_timestamp: 1460563210
+    generated_timestamp: 1465561976
