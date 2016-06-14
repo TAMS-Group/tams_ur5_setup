@@ -14,7 +14,7 @@ controller_list:
    action_ns: ""
    type: GripperCommand
    default: true
-   command_joint: finger_middle_joint_1
+   command_joint: s_model_finger_middle_joint_1
    joints:
       - s_model_palm_finger_1_joint
       - s_model_finger_1_joint_1
