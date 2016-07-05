@@ -262,6 +262,10 @@
   </gazebo>
 
 
+  <link name="turtlebot" />
+  <link name="turtlebot_holder" />
+
+
   <joint name="floor_wall_joint" type="fixed">
     <parent link="floor"/>
     <child link="wall"/>
@@ -310,13 +314,22 @@
     <origin xyz="0.2 1 1.25" rpy="0 0 0" />
   </joint>
 
- 
-   <joint name="apriltag_ur5_joint" type="fixed">
+  <joint name="apriltag_ur5_joint" type="fixed">
     <parent link="wall" />
-    <child link = "april_tag_ur5" />
+    <child link="april_tag_ur5" />
     <origin xyz="-0.02 0.75 1.494" rpy="${-pi/2} 0.0 ${-pi/2}" /> <!-- offset relative to the tilted wall -->
   </joint>
 
+  <joint name="turtlebot_joint" type="fixed">
+    <parent link="world" />
+    <child link="turtlebot" />
+    <origin xyz="0.26 1.31 0.0" rpy="0.0 0.0 0.0" />
+  </joint>
 
+  <joint name="turtlebot_holder_joint" type="fixed">
+    <parent link="turtlebot" />
+    <child link="turtlebot_holder" />
+    <origin xyz="0.035 0.0 0.42" rpy="0.0 0.0 0.0" />
+  </joint>
 
 </robot>
