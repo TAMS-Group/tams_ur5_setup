@@ -10,4 +10,9 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
+  <run_depend>apriltags_ros</run_depend>
+  <run_depend>camera_positioner</run_depend>
+  <run_depend>openni2_launch</run_depend>
+  <run_depend>tams_ur5_bringup</run_depend>
+  <run_depend>tams_ur5_setup_description</run_depend>
 </package>
