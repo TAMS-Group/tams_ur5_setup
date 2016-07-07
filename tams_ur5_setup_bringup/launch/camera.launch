@@ -7,7 +7,7 @@
   </include>
 
   <node pkg="apriltags_ros" type="apriltag_detector_node" name="apriltag_detector">
-    <rosparam param="tag_descriptions">[{id: 0, size: 0.166}]</rosparam>
+    <rosparam param="tag_descriptions">[{id: 0, size: 0.162}]</rosparam>
 
     <remap from="/image_rect" to="/camera/rgb/image_rect_color"/>
     <remap from="/camera_info" to="/camera/rgb/camera_info"/>
