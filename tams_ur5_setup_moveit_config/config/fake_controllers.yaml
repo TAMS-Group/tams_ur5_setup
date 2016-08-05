@@ -20,3 +20,9 @@ controller_list:
       - ur5_wrist_1_joint
       - ur5_wrist_2_joint
       - ur5_wrist_3_joint
+
+initial:
+  - group: arm
+    pose: home
+  - group: gripper
+    pose: open
