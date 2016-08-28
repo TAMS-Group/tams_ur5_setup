@@ -149,7 +149,6 @@
     <disable_collisions link1="floor" link2="ur5_wrist_2_link" reason="Never" />
     <disable_collisions link1="floor" link2="ur5_wrist_3_link" reason="Never" />
     <disable_collisions link1="floor" link2="wall" reason="Adjacent" />
-    <disable_collisions link1="ft_adapter" link2="ft_adapter" reason="User" />
     <disable_collisions link1="ft_adapter" link2="ft_fts_robotside" reason="User" />
     <disable_collisions link1="ft_adapter" link2="plug_collision_model_link_1" reason="User" />
     <disable_collisions link1="ft_adapter" link2="plug_collision_model_link_2" reason="User" />
