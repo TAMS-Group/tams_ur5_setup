@@ -216,7 +216,8 @@
     <collision>
       <origin xyz="0 1.7 0" />
       <geometry>
-        <box size="0.4 2 2.5" />
+        <!-- the collision model is 7cm wider due to security reasons -->
+        <box size="0.54 2.14 2.5" />
       </geometry>
     </collision>
   </link>
