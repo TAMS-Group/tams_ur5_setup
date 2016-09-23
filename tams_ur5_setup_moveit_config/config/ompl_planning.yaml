@@ -66,7 +66,7 @@ gripper:
     - PRMkConfigDefault
     - PRMstarkConfigDefault
 arm:
-  default_planner_config: BKPIECEkConfigDefault
+  default_planner_config: PRMstarkConfigDefault
   planner_configs:
     - SBLkConfigDefault
     - ESTkConfigDefault
