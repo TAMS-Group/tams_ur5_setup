@@ -1,12 +1,19 @@
 # joint_limits.yaml allows the dynamics properties specified in the URDF to be overwritten or augmented as needed
 # Specific joint properties can be changed with the keys [max_position, min_position, max_velocity, max_acceleration]
 # Joint limits can be turned off with [has_velocity_limits, has_acceleration_limits]
+
+max_arm_velocity: &max_arm_velocity
+    max_velocity: 0.5
+
+max_arm_acceleration: &max_arm_acceleration
+    max_acceleration: 0.5
+
 joint_limits:
   ur5_elbow_joint:
     has_velocity_limits: true
-    max_velocity: 0.7
+    <<: *max_arm_velocity
     has_acceleration_limits: false
-    max_acceleration: 0.5
+    <<: *max_arm_acceleration
   s_model_finger_1_joint_1:
     has_velocity_limits: true
     max_velocity: 100
@@ -64,26 +71,25 @@ joint_limits:
     max_acceleration: 0
   ur5_shoulder_lift_joint:
     has_velocity_limits: true
-    max_velocity: 0.7
+    <<: *max_arm_velocity
     has_acceleration_limits: false
-    max_acceleration: 0.5
+    <<: *max_arm_acceleration
   ur5_shoulder_pan_joint:
     has_velocity_limits: true
-    max_velocity: 0.7
+    <<: *max_arm_velocity
     has_acceleration_limits: false
-    max_acceleration: 0.5
+    <<: *max_arm_acceleration
   ur5_wrist_1_joint:
     has_velocity_limits: true
-    max_velocity: 0.7
+    <<: *max_arm_velocity
     has_acceleration_limits: false
-    max_acceleration: 0.5
   ur5_wrist_2_joint:
     has_velocity_limits: true
-    max_velocity: 0.7
+    <<: *max_arm_velocity
     has_acceleration_limits: false
-    max_acceleration: 0.5
+    <<: *max_arm_acceleration
   ur5_wrist_3_joint:
     has_velocity_limits: true
-    max_velocity: 0.7
+    <<: *max_arm_velocity
     has_acceleration_limits: false
-    max_acceleration: 0.5
+    <<: *max_arm_acceleration
