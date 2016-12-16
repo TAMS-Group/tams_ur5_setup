@@ -319,7 +319,7 @@
   <joint name="apriltag_ur5_joint" type="fixed">
     <parent link="wall" />
     <child link="april_tag_ur5" />
-    <origin xyz="-0.02 0.75 1.494" rpy="${-pi/2} 0.0 ${-pi/2}" /> <!-- offset relative to the tilted wall -->
+    <origin xyz="-0.015 0.75 1.494" rpy="${-pi/2} 0.0 ${-pi/2}" /> <!-- offset relative to the tilted wall -->
   </joint>
 
   <joint name="turtlebot_joint" type="fixed">
