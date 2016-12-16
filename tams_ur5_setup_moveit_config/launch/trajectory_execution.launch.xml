@@ -11,6 +11,9 @@
   <!-- Allow more than the expected execution time before triggering a trajectory cancel (applied after scaling) -->
   <param name="trajectory_execution/allowed_goal_duration_margin" value="0.5"/> <!-- default 0.5 -->
   
+  <!-- TAMS: allow for an error of more than 0.01 in the start state. Apparently the ur5 often exceeds this limit -->
+  <param name="trajectory_execution/allowed_start_tolerance" value="0.1"/>
+
   <!-- Load the robot specific controller manager; this sets the moveit_controller_manager ROS parameter -->
   <arg name="moveit_controller_manager" default="tams_ur5_setup" />
   <include file="$(find tams_ur5_setup_moveit_config)/launch/$(arg moveit_controller_manager)_moveit_controller_manager.launch.xml" />
