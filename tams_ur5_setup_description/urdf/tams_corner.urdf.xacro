@@ -3,7 +3,7 @@
        name="tams_corner" > 
   <xacro:property name="roomheight" value="3.0" />
   <xacro:property name="pi" value="3.1415926535897931" />
-  <xacro:property name="tableheight" value="0.74" />
+  <xacro:property name="tableheight" value="0.75" />
 
   <material name="white">
     <color rgba="1 1 1 1"/>
@@ -173,21 +173,21 @@
       <mass value="10" />
       <inertia  ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
     </inertial>
-    <visual>
+   <visual>
       <material name="brown" />
       <origin xyz="0 0 ${tableheight/2}" />
       <geometry>
-        <box size="1.0 0.80 ${tableheight}" />
+        <box size="0.80 1.0 ${tableheight}" />
       </geometry>
     </visual>
     <collision>
       <origin xyz="0 0 ${tableheight/2}" />
       <geometry>
-        <box size="1.0 0.80 ${tableheight}" />
+        <box size="0.80 1.0 ${tableheight}" />
       </geometry>
-    </collision>
-  </link>
-  <gazebo reference="table">
+    </collision>  
+</link>
+<gazebo reference="table">
     <material>Gazebo/Blue</material>
     <turnGravityOff>false</turnGravityOff>
     <selfCollide>true</selfCollide>
@@ -273,7 +273,7 @@
     <child link="wall"/>
     <!-- The actual wall in the lab is slightly tilted, the rotation compensates approx 1 deg -->
     <origin xyz="0 0 0" rpy="0 0 0" />
-    <!--<origin xyz="0 0 0" rpy="0 -0.017 0" />-->
+    <!--<origin xyz="0 0 0" rpy="0 0.06 0" />-->
   </joint>
 
   <joint name="side_wall_joint" type="fixed">
@@ -300,7 +300,8 @@
     <parent link="floor"/>
     <child link="table"/>
     <!-- actual wall is 2.5cm further back from table, but is modelled at the position of the small ur5 adapter plate -->
-    <origin xyz="0.73 0.30 0" rpy="0 0 0" />
+   <!-- <origin xyz="0.75 0.3 0" rpy="0 0 0" /> -->
+    <origin xyz="0.89 0.74 0" rpy="0 0 0" />
   </joint>
 
   <joint name="table_top_joint" type="fixed">
@@ -319,6 +320,7 @@
   <joint name="apriltag_ur5_joint" type="fixed">
     <parent link="wall" />
     <child link="april_tag_ur5" />
+    <!--<origin xyz="-0.015 0.75 1.494" rpy="${-pi/2-0.05} 0.0 ${-pi/2}" />--> <!-- offset relative to the tilted wall -->
     <origin xyz="-0.015 0.75 1.494" rpy="${-pi/2} 0.0 ${-pi/2}" /> <!-- offset relative to the tilted wall -->
   </joint>
 
