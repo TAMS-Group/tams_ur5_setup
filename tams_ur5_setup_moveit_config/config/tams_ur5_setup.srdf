@@ -121,7 +121,7 @@
         <joint name="ur5_wrist_3_joint" value="1.57078" />
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="eef" parent_link="tool0" group="gripper" parent_group="arm" />
+    <end_effector name="gripper" parent_link="s_model_tool0" group="gripper" parent_group="arm" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="april_tag_ur5" link2="cable_duct" reason="Never" />
     <disable_collisions link1="april_tag_ur5" link2="floor" reason="Never" />
