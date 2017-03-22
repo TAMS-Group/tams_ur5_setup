@@ -1,4 +1,6 @@
 controller_list:
+        # - name: vel_based_pos_traj_controller
+        #   action_ns: follow_joint_trajectory
  - name: follow_joint_trajectory
    action_ns: ""
    type: FollowJointTrajectory

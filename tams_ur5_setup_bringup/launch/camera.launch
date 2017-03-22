@@ -4,6 +4,8 @@
 	<group if="$(arg use_kinect)">
 		<include file="$(find freenect_launch)/launch/freenect.launch">
 			<arg name="depth_registration" value="true" />
+            <!--<arg name="rgb_camera_info_url" value="$(find kinect_calibration)/kinect_rgb_calibration.yaml" />
+            <arg name="depth_camera_info_url" value="$(find kinect_calibration)/kinect_ir_calibration.yaml" />-->
 		</include>
 	</group>
 
@@ -16,7 +18,8 @@
 	</group>
 
 	<node pkg="apriltags_ros" type="apriltag_detector_node" name="apriltag_detector">
-		<rosparam param="tag_descriptions">[{id: 0, size: 0.162}]</rosparam>
+		<!-- <rosparam param="tag_descriptions">[{id: 0, size: 0.162}]</rosparam> -->
+                <rosparam param="tag_descriptions">[{id: 0, size: 0.162}]</rosparam>
 		<remap from="/image_rect" to="/camera/rgb/image_rect_color"/>
 		<remap from="/camera_info" to="/camera/rgb/camera_info"/>
 	</node>

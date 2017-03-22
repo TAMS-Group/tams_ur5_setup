@@ -4,6 +4,8 @@
 
 	<include file="$(find tams_ur5_setup_description)/launch/tams_ur5_setup_upload.launch"/>
 
+    <include file="$(find tams_ur5_setup_moveit_config)/launch/move_group.launch"/>
+
 	<include file="$(find tams_ur5_setup_bringup)/launch/camera.launch">
 		<arg name="use_kinect" value="true" />
 	</include>
