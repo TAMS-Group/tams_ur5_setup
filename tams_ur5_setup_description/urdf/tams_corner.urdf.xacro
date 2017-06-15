@@ -74,6 +74,24 @@
     <kp>1000000.0</kp>
     <kd>1.0</kd>
   </gazebo>
+
+  <!-- tilted ur5 mount - the meshes are not centered at mount point so they are adjusted to fit to the frame -->
+  <link name="ur5_mount">
+    <visual>
+      <material name="lightgray" />
+      <origin xyz="-0.0245 -0.09 -0.28" />
+      <geometry>
+	<mesh filename="package://tams_ur5_setup_description/meshes/ur5_mount_binary_v3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0245 -0.09 -0.28" />
+      <geometry>
+	<mesh filename="package://tams_ur5_setup_description/meshes/ur5_mount_binary_v3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
   <link name="side_wall">
     <inertial>
       <origin xyz="0 0 0" />
@@ -274,6 +292,12 @@
     <!-- The actual wall in the lab is slightly tilted, the rotation compensates approx 1 deg -->
     <origin xyz="0 0 0" rpy="0 0 0" />
     <!--<origin xyz="0 0 0" rpy="0 0.06 0" />-->
+  </joint>
+
+  <joint name="wall_mount_joint" type="fixed">
+    <parent link="wall"/>
+    <child link="ur5_mount"/>
+	<origin xyz="0.2255 0.7245 1.085" rpy="0 0 ${pi}" />
   </joint>
 
   <joint name="side_wall_joint" type="fixed">

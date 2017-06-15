@@ -25,9 +25,8 @@
   </joint>
 
   <joint name="wall_ur5_joint" type="fixed">
-    <parent link="wall" />
+    <parent link="ur5_mount" />
     <child link = "ur5_base_link" />
-    <origin xyz="0.0 0.722 1.0175" rpy="${pi/2} 0.0 ${pi/2}" />
+    <origin xyz="0 0 0.003" rpy="0.0 0.0 ${pi/2}" />
   </joint>
-
 </robot>
