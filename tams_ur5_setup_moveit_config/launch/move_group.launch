@@ -66,7 +66,7 @@
     <param name="planning_scene_monitor/publish_geometry_updates" value="$(arg publish_monitored_planning_scene)" />
     <param name="planning_scene_monitor/publish_state_updates" value="$(arg publish_monitored_planning_scene)" />
     <param name="planning_scene_monitor/publish_transforms_updates" value="$(arg publish_monitored_planning_scene)" />
-    <param name="constraint_approximations_path" value="$(find project16_manipulation)/cadb_15000" />
+    <param name="constraint_approximations_path" value="$(find project16_manipulation)/cadb_20000_bagger" />
   </node>
 
 </launch>
