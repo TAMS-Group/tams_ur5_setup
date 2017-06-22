@@ -104,37 +104,21 @@
         <joint name="ur5_wrist_2_joint" value="1.5708" />
         <joint name="ur5_wrist_3_joint" value="0" />
     </group_state>
-    <group_state name="pour_default" group="arm">
-        <joint name="ur5_elbow_joint" value="-2.4003" />
-        <joint name="ur5_shoulder_lift_joint" value="-0.7196" />
-        <joint name="ur5_shoulder_pan_joint" value="0" />
-        <joint name="ur5_wrist_1_joint" value="-1.5288" />
-        <joint name="ur5_wrist_2_joint" value="-1.5770" />
-        <joint name="ur5_wrist_3_joint" value="-1.4975" />
-    </group_state>
     <group_state name="pour_default_2" group="arm">
-        <joint name="ur5_elbow_joint" value="2.43827939" />
-        <joint name="ur5_shoulder_lift_joint" value="-2.4539154" />
-        <joint name="ur5_shoulder_pan_joint" value="-3.1374369" />
-        <joint name="ur5_wrist_1_joint" value="-1.59355" />
-        <joint name="ur5_wrist_2_joint" value="1.623685" />
-        <joint name="ur5_wrist_3_joint" value="-1.65139" />
+        <joint name="ur5_shoulder_pan_joint" value="0.0" />
+        <joint name="ur5_shoulder_lift_joint" value="-0.66" />
+        <joint name="ur5_elbow_joint" value="2.217" />
+        <joint name="ur5_wrist_1_joint" value="-1.57 " />
+        <joint name="ur5_wrist_2_joint" value="0.0" />
+        <joint name="ur5_wrist_3_joint" value="3.14" />
     </group_state>
-    <group_state name="pour_above_glass_1" group="arm">
-        <joint name="ur5_elbow_joint" value="1.613221" />
-        <joint name="ur5_shoulder_lift_joint" value="-1.384252" />
-        <joint name="ur5_shoulder_pan_joint" value="-0.043378" />
-        <joint name="ur5_wrist_1_joint" value="1.3337177" />
-        <joint name="ur5_wrist_2_joint" value="-1.5678" />
-        <joint name="ur5_wrist_3_joint" value="-1.5254896" />
-    </group_state>
-    <group_state name="pour_above_glass_2" group="arm">
-        <joint name="ur5_elbow_joint" value="-2.04764" />
-        <joint name="ur5_shoulder_lift_joint" value="-1.2991727" />
-        <joint name="ur5_shoulder_pan_joint" value="-2.59472" />
-        <joint name="ur5_wrist_1_joint" value="-1.36526" />
-        <joint name="ur5_wrist_2_joint" value="-1.57034" />
-        <joint name="ur5_wrist_3_joint" value="1.02389" />
+    <group_state name="pour_default" group="arm">
+        <joint name="ur5_shoulder_pan_joint" value="0.0" />
+        <joint name="ur5_shoulder_lift_joint" value="-2.3562" />
+        <joint name="ur5_elbow_joint" value="-2.3562" />
+        <joint name="ur5_wrist_1_joint" value="1.5708" />
+        <joint name="ur5_wrist_2_joint" value="0.0" />
+        <joint name="ur5_wrist_3_joint" value="0.0" />
     </group_state>
     <group_state name="start_grab_pose" group="arm">
         <joint name="ur5_elbow_joint" value="-1.392" />
