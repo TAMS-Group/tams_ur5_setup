@@ -1,7 +1,7 @@
 <launch>
 
   <!-- This file makes it easy to include the settings for sensor managers -->  
-  <rosparam command="load" file="$(find tams_ur5_setup_moveit_config)/config/sensors_kinect.yaml" />
+  <!--<rosparam command="load" file="$(find tams_ur5_setup_moveit_config)/config/sensors_kinect.yaml" />-->
 
   <!-- Params for the octomap monitor -->
   <!--  <param name="octomap_frame" type="string" value="some frame in which the robot moves" /> -->
