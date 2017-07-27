@@ -318,7 +318,7 @@
   <joint name="wall_mount_joint" type="fixed">
     <parent link="wall"/>
     <child link="ur5_mount"/>
-	<origin xyz="0.2255 0.7245 1.085" rpy="0 0 ${pi}" />
+	<origin xyz="0.2255 0.7245 1.082" rpy="0 0 ${pi}" />
   </joint>
 
   <joint name="side_wall_joint" type="fixed">
@@ -366,7 +366,7 @@
     <parent link="wall" />
     <child link="april_tag_ur5" />
     <!--<origin xyz="-0.015 0.75 1.494" rpy="${-pi/2-0.05} 0.0 ${-pi/2}" />--> <!-- offset relative to the tilted wall -->
-    <origin xyz="-0.01 0.75 1.494" rpy="${-pi/2} 0.0 ${-pi/2}" /> <!-- offset relative to the tilted wall -->
+    <origin xyz="-0.01 0.74 1.505" rpy="${-pi/2} 0.0 ${-pi/2}" /> <!-- offset relative to the tilted wall -->
   </joint>
 
   <joint name="clock_joint" type="fixed">
