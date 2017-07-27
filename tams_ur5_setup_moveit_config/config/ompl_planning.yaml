@@ -67,7 +67,8 @@ gripper:
     - PRMkConfigDefault
     - PRMstarkConfigDefault
 arm:
-  default_planner_config: PRMstarkConfigDefault
+  #default_planner_config: PRMstarkConfigDefault
+  default_planner_config: RRTConnectkConfigDefault
   planner_configs:
     - SBLkConfigDefault
     - ESTkConfigDefault
