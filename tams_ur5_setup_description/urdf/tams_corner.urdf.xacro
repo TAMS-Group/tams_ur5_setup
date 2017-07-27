@@ -3,7 +3,7 @@
        name="tams_corner" > 
   <xacro:property name="roomheight" value="3.0" />
   <xacro:property name="pi" value="3.1415926535897931" />
-  <xacro:property name="tableheight" value="0.74" />
+  <xacro:property name="tableheight" value="0.75" />
 
   <material name="white">
     <color rgba="1 1 1 1"/>
