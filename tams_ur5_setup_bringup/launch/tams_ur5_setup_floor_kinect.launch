@@ -8,8 +8,5 @@
 
 	<include file="$(find tams_ur5_setup_moveit_config)/launch/move_group.launch"/>
 
-	<include file="$(find tams_ur5_setup_bringup)/launch/camera.launch">
-		<arg name="use_kinect" value="true" />
-	</include>
-
+	<include file="$(find tams_ur5_setup_bringup)/launch/kinect.launch"/>
 </launch>
