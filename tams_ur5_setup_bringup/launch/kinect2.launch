@@ -2,6 +2,7 @@
 <launch>
 	<include file="$(find kinect2_bridge)/launch/kinect2_bridge.launch">
 		<arg name="publish_tf" value="true"/>
+		<arg name="calib_path" value="$(find tams_ur5_setup_bringup)/config/kinect2_calib/" />
 	</include>
 	<node pkg="apriltags_ros" type="apriltag_detector_node" name="apriltag_detector">
 		<rosparam param="tag_descriptions">[{id: 0, size: 0.161}]</rosparam>
