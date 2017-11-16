@@ -2,6 +2,9 @@
 
   <arg name="use_gui" default="false" />
 
+  <!-- Specifies the joint ranges of the ur5 that should be used in the URDF -->
+  <arg name="ur5_joint_ranges_config" default="$(find tams_ur5_description)/config/joint_ranges/default.yaml" />
+
   <!-- By default, we do not start a database (it can be large) -->
   <arg name="db" default="false" />
   <!-- Allow user to specify database location -->
@@ -13,6 +16,7 @@
   <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
   <include file="$(find tams_ur5_setup_moveit_config)/launch/planning_context.launch">
     <arg name="load_robot_description" value="true"/>
+    <arg name="ur5_joint_ranges_config" value="$(arg ur5_joint_ranges_config)"/>
   </include>
 
   <!-- If needed, broadcast static tf for robot root -->
@@ -33,6 +37,7 @@
     <arg name="fake_execution" value="true"/>
     <arg name="info" value="true"/>
     <arg name="debug" value="$(arg debug)"/>
+    <arg name="ur5_joint_ranges_config" value="$(arg ur5_joint_ranges_config)"/>
   </include>
 
   <!-- Run Rviz and load the default config to see the state of the move_group node -->

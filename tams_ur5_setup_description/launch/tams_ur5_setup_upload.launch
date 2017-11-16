@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
 <launch>
-  <param name="robot_description" command="$(find xacro)/xacro.py '$(find tams_ur5_setup_description)/urdf/tams_ur5_setup.urdf.xacro'" />
+  <arg name="joint_ranges_config" default="$(find tams_ur5_description)/config/joint_ranges/default.yaml" />
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find tams_ur5_setup_description)/urdf/tams_ur5_setup.urdf.xacro' joint_ranges_config:=$(arg joint_ranges_config)" />
 </launch>

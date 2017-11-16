@@ -1,6 +1,11 @@
 <launch>
 
-  <include file="$(find tams_ur5_setup_moveit_config)/launch/planning_context.launch" />
+  <!-- Specifies the joint ranges of the ur5 that should be used in the URDF -->
+  <arg name="ur5_joint_ranges_config" default="$(find tams_ur5_description)/config/joint_ranges/default.yaml" />
+
+  <include file="$(find tams_ur5_setup_moveit_config)/launch/planning_context.launch">
+    <arg name="ur5_joint_ranges_config" value="$(arg ur5_joint_ranges_config)" />
+  </include>
 
   <!-- GDB Debug Option -->
   <arg name="debug" default="false" />
