@@ -1,6 +1,5 @@
 controller_list:
   - name: fake_gripper_controller
-#    type: last point
     joints:
       - s_model_palm_finger_1_joint
       - s_model_finger_1_joint_1
@@ -14,7 +13,6 @@ controller_list:
       - s_model_finger_middle_joint_2
       - s_model_finger_middle_joint_3
   - name: fake_arm_controller
-#    type: last point
     joints:
       - ur5_shoulder_pan_joint
       - ur5_shoulder_lift_joint
