@@ -1,9 +1,15 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
        name="tams_corner" > 
+  <xacro:arg name="floating_table" default="false" />
+
   <xacro:property name="roomheight" value="3.0" />
   <xacro:property name="pi" value="3.1415926535897931" />
   <xacro:property name="tableheight" value="0.75" />
+  <xacro:property name="tablewidth" value="1.00" />
+  <xacro:property name="tabledepth" value="0.80" />
+
+  <xacro:property name="tabletag_size" value="0.20" />
 
   <material name="white">
     <color rgba="1 1 1 1"/>
@@ -218,6 +224,8 @@
 
   <link name="table_top"/>
 
+  <link name="table_tag"/>
+
   <link name="shelf">
     <inertial>
       <origin xyz="1.7 0 0" />
@@ -341,6 +349,7 @@
     <origin xyz="0.475 -0.135 ${roomheight/2}" rpy="0 0 0" />
   </joint>
 
+  <xacro:unless value="$(arg floating_table)">
   <joint name="table_joint" type="fixed">
     <parent link="floor"/>
     <child link="table"/>
@@ -348,11 +357,24 @@
    <!-- <origin xyz="0.73 0.30 0" rpy="0 0 0" /> -->
     <origin xyz="0.89 0.74 0" rpy="0 0 0" />
   </joint>
+  </xacro:unless>
+  <xacro:if value="$(arg floating_table)">
+  <joint name="table_joint" type="floating">
+    <parent link="floor"/>
+    <child link="table"/>
+  </joint>
+  </xacro:if>
 
   <joint name="table_top_joint" type="fixed">
     <parent link="table"/>
     <child link="table_top"/>
     <origin xyz="0 0 ${tableheight}" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="table_tag_joint" type="fixed">
+    <parent link="table_top"/>
+    <child link="table_tag"/>
+    <origin xyz="${tabledepth/2-tabletag_size/2} ${tablewidth/2-tabletag_size/2} 0" rpy="0 0 0"/>
   </joint>
 
   <joint name="shelf_joint" type="fixed">

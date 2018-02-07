@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <launch>
   <arg name="joint_ranges_config" default="$(find tams_ur5_description)/config/joint_ranges/default.yaml" />
+  <arg name="floating_table" default="false" />
   <arg name="r200" default="true" />
 
-  <param name="robot_description" command="$(find xacro)/xacro.py '$(find tams_ur5_setup_description)/urdf/tams_ur5_setup.urdf.xacro' joint_ranges_config:=$(arg joint_ranges_config) r200:=$(arg r200)" />
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find tams_ur5_setup_description)/urdf/tams_ur5_setup.urdf.xacro' joint_ranges_config:=$(arg joint_ranges_config) floating_table:=$(arg floating_table) r200:=$(arg r200)" />
 </launch>

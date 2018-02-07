@@ -4,7 +4,9 @@
   
   <xacro:property name="pi" value="3.1415926535897931" />
   <!-- tams corner -->
-  <xacro:include filename="$(find tams_ur5_setup_description)/urdf/tams_corner.urdf.xacro" />
+  <xacro:include filename="$(find tams_ur5_setup_description)/urdf/tams_corner.urdf.xacro">
+    <arg name="floating_table" value="$(arg floating_table)" />
+  </xacro:include>
   <!-- arm -->
   <xacro:include filename="$(find tams_ur5_description)/urdf/arm.urdf.xacro" />
 
