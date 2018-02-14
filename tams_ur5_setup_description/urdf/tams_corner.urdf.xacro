@@ -374,7 +374,7 @@
   <joint name="table_tag_joint" type="fixed">
     <parent link="table_top"/>
     <child link="table_tag"/>
-    <origin xyz="${tabledepth/2-tabletag_size/2} ${tablewidth/2-tabletag_size/2} 0" rpy="0 0 0"/>
+    <origin xyz="${tabledepth/2-tabletag_size/2} ${tablewidth/2-tabletag_size/2} 0" rpy="0 0 ${pi}"/>
   </joint>
 
   <joint name="shelf_joint" type="fixed">
