@@ -5,7 +5,7 @@
 
   <xacro:property name="roomheight" value="3.0" />
   <xacro:property name="pi" value="3.1415926535897931" />
-  <xacro:property name="tableheight" value="0.75" />
+  <xacro:property name="tableheight" value="0.78" />
   <xacro:property name="tablewidth" value="1.00" />
   <xacro:property name="tabledepth" value="0.80" />
 
