@@ -28,6 +28,34 @@
         <chain base_link="ur5_base_link" tip_link="s_model_tool0" />
     </group>
     <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
+
+    <!-- closed and open are identical to wide_pinch_closed and wide_pinch_open for legacy reasons -->
+    <group_state name="closed" group="gripper">
+        <joint name="s_model_finger_1_joint_1" value="0.924553" />
+        <joint name="s_model_finger_1_joint_2" value="0" />
+        <joint name="s_model_finger_1_joint_3" value="-0.977384" />
+        <joint name="s_model_finger_2_joint_1" value="0.924553" />
+        <joint name="s_model_finger_2_joint_2" value="0" />
+        <joint name="s_model_finger_2_joint_3" value="-0.977384" />
+        <joint name="s_model_finger_middle_joint_1" value="0.924553" />
+        <joint name="s_model_finger_middle_joint_2" value="0" />
+        <joint name="s_model_finger_middle_joint_3" value="-0.977384" />
+        <joint name="s_model_palm_finger_1_joint" value="-0.14079" />
+        <joint name="s_model_palm_finger_2_joint" value="0.14079" />
+    </group_state>
+    <group_state name="open" group="gripper">
+        <joint name="s_model_finger_1_joint_1" value="0.0495296" />
+        <joint name="s_model_finger_1_joint_2" value="0" />
+        <joint name="s_model_finger_1_joint_3" value="-0.0523599" />
+        <joint name="s_model_finger_2_joint_1" value="0.0495296" />
+        <joint name="s_model_finger_2_joint_2" value="0" />
+        <joint name="s_model_finger_2_joint_3" value="-0.0523599" />
+        <joint name="s_model_finger_middle_joint_1" value="0.0495296" />
+        <joint name="s_model_finger_middle_joint_2" value="0" />
+        <joint name="s_model_finger_middle_joint_3" value="-0.0523599" />
+        <joint name="s_model_palm_finger_1_joint" value="0.191986" />
+        <joint name="s_model_palm_finger_2_joint" value="-0.191986" />
+    </group_state>
     <group_state name="basic_closed" group="gripper">
         <joint name="s_model_finger_1_joint_1" value="1.22173" />
         <joint name="s_model_finger_1_joint_2" value="1.5708" />
@@ -54,7 +82,86 @@
         <joint name="s_model_palm_finger_1_joint" value="-0.016212" />
         <joint name="s_model_palm_finger_2_joint" value="0.016212" />
     </group_state>
-    <group_state name="closed" group="gripper">
+    <group_state name="pinch_closed" group="gripper">
+        <joint name="s_model_finger_1_joint_1" value="0.9328077" />
+        <joint name="s_model_finger_1_joint_2" value="0" />
+        <joint name="s_model_finger_1_joint_3" value="-0.9861110" />
+        <joint name="s_model_finger_2_joint_1" value="0.9328077" />
+        <joint name="s_model_finger_2_joint_2" value="0" />
+        <joint name="s_model_finger_2_joint_3" value="-0.9861110" />
+        <joint name="s_model_finger_middle_joint_1" value="0.9328077" />
+        <joint name="s_model_finger_middle_joint_2" value="0" />
+        <joint name="s_model_finger_middle_joint_3" value="-0.9861110" />
+        <joint name="s_model_palm_finger_1_joint" value="-0.1561488" />
+        <joint name="s_model_palm_finger_2_joint" value="0.1561488" />
+    </group_state>
+    <group_state name="pinch_open" group="gripper">
+        <joint name="s_model_finger_1_joint_1" value="0.0495296" />
+        <joint name="s_model_finger_1_joint_2" value="0" />
+        <joint name="s_model_finger_1_joint_3" value="-0.0523599" />
+        <joint name="s_model_finger_2_joint_1" value="0.0495296" />
+        <joint name="s_model_finger_2_joint_2" value="0" />
+        <joint name="s_model_finger_2_joint_3" value="-0.0523599" />
+        <joint name="s_model_finger_middle_joint_1" value="0.0495296" />
+        <joint name="s_model_finger_middle_joint_2" value="0" />
+        <joint name="s_model_finger_middle_joint_3" value="-0.0523599" />
+        <joint name="s_model_palm_finger_1_joint" value="-0.1561488" />
+        <joint name="s_model_palm_finger_2_joint" value="0.1561488" />
+    </group_state>
+    <group_state name="wide_closed" group="gripper">
+        <joint name="s_model_finger_1_joint_1" value="1.2217304" />
+        <joint name="s_model_finger_1_joint_2" value="1.5707963" />
+        <joint name="s_model_finger_1_joint_3" value="-0.9599310" />
+        <joint name="s_model_finger_2_joint_1" value="1.2217304" />
+        <joint name="s_model_finger_2_joint_2" value="1.5707963" />
+        <joint name="s_model_finger_2_joint_3" value="-0.9599310" />
+        <joint name="s_model_finger_middle_joint_1" value="1.2217304" />
+        <joint name="s_model_finger_middle_joint_2" value="1.5707963" />
+        <joint name="s_model_finger_middle_joint_3" value="-0.9599310" />
+        <joint name="s_model_palm_finger_1_joint" value="0.1766273" />
+        <joint name="s_model_palm_finger_2_joint" value="-0.1766273" />
+    </group_state>
+    <group_state name="wide_open" group="gripper">
+        <joint name="s_model_finger_1_joint_1" value="0.0495296" />
+        <joint name="s_model_finger_1_joint_2" value="0.0" />
+        <joint name="s_model_finger_1_joint_3" value="-0.0523599" />
+        <joint name="s_model_finger_2_joint_1" value="0.0495296" />
+        <joint name="s_model_finger_2_joint_2" value="0.0" />
+        <joint name="s_model_finger_2_joint_3" value="-0.0523599" />
+        <joint name="s_model_finger_middle_joint_1" value="0.0495296" />
+        <joint name="s_model_finger_middle_joint_2" value="0.0" />
+        <joint name="s_model_finger_middle_joint_3" value="-0.0523599" />
+        <joint name="s_model_palm_finger_1_joint" value="0.1766273" />
+        <joint name="s_model_palm_finger_2_joint" value="-0.1766273" />
+    </group_state>
+    <group_state name="scissor_closed" group="gripper">
+        <joint name="s_model_finger_1_joint_1" value="0.0495296" />
+        <joint name="s_model_finger_1_joint_2" value="0.0" />
+        <joint name="s_model_finger_1_joint_3" value="-0.0523599" />
+        <joint name="s_model_finger_2_joint_1" value="0.0495296" />
+        <joint name="s_model_finger_2_joint_2" value="0.0" />
+        <joint name="s_model_finger_2_joint_3" value="-0.0523599" />
+        <joint name="s_model_finger_middle_joint_1" value="0.0495296" />
+        <joint name="s_model_finger_middle_joint_2" value="0.0" />
+        <joint name="s_model_finger_middle_joint_3" value="-0.0523599" />
+        <joint name="s_model_palm_finger_1_joint" value="-0.1783338" />
+        <joint name="s_model_palm_finger_2_joint" value="0.1783338" />
+    </group_state>
+    <!-- scissor_open is identical to wide_pinch_open. The action server always uses wide_pinch_open. -->
+    <group_state name="scissor_open" group="gripper">
+        <joint name="s_model_finger_1_joint_1" value="0.0495296" />
+        <joint name="s_model_finger_1_joint_2" value="0.0" />
+        <joint name="s_model_finger_1_joint_3" value="-0.0523599" />
+        <joint name="s_model_finger_2_joint_1" value="0.0495296" />
+        <joint name="s_model_finger_2_joint_2" value="0.0" />
+        <joint name="s_model_finger_2_joint_3" value="-0.0523599" />
+        <joint name="s_model_finger_middle_joint_1" value="0.0495296" />
+        <joint name="s_model_finger_middle_joint_2" value="0.0" />
+        <joint name="s_model_finger_middle_joint_3" value="-0.0523599" />
+        <joint name="s_model_palm_finger_1_joint" value="0.1919862" />
+        <joint name="s_model_palm_finger_2_joint" value="-0.1919862" />
+    </group_state>
+    <group_state name="wide_pinch_closed" group="gripper">
         <joint name="s_model_finger_1_joint_1" value="0.924553" />
         <joint name="s_model_finger_1_joint_2" value="0" />
         <joint name="s_model_finger_1_joint_3" value="-0.977384" />
@@ -67,7 +174,7 @@
         <joint name="s_model_palm_finger_1_joint" value="-0.14079" />
         <joint name="s_model_palm_finger_2_joint" value="0.14079" />
     </group_state>
-    <group_state name="open" group="gripper">
+    <group_state name="wide_pinch_open" group="gripper">
         <joint name="s_model_finger_1_joint_1" value="0.0495296" />
         <joint name="s_model_finger_1_joint_2" value="0" />
         <joint name="s_model_finger_1_joint_3" value="-0.0523599" />
