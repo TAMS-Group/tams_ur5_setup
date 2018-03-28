@@ -12,5 +12,9 @@
 	<node pkg="camera_positioner" type="camera_positioner_table" name="camera_positioner_table">
 		<param name="camera_rgb_optical_frame" value="kinect2_rgb_optical_frame"/>
 		<param name="camera_link" value="kinect2_link"/>
+		<param name="table_tag_id" value="42"/>
+		<param name="wall_tag_id" value="0"/>
+		<param name="update_table_tag" value="true"/>
+		<param name="tabletag_stable_threshold" value="1000"/> 
 	</node>
 </launch>
