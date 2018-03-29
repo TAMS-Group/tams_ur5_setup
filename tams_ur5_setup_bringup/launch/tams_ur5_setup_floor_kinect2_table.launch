@@ -9,6 +9,7 @@
 	<arg name="ur5_joint_ranges_config" default="$(find tams_ur5_description)/config/joint_ranges/elbow_up.yaml"/>
         <include file="$(find tams_ur5_setup_description)/launch/tams_ur5_setup_upload.launch">
 		<arg name="joint_ranges_config" value="$(arg ur5_joint_ranges_config)"/>
+                <arg name="floating_table" value="true"/>
 	</include>
 
         <include file="$(find tams_ur5_setup_moveit_config)/launch/move_group.launch"/>

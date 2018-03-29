@@ -14,7 +14,7 @@
 		<param name="camera_link" value="kinect2_link"/>
 		<param name="table_tag_id" value="42"/>
 		<param name="wall_tag_id" value="0"/>
-		<param name="update_table_tag" value="true"/>
-		<param name="tabletag_stable_threshold" value="1000"/> 
+		<param name="update_table_tag" value="false"/>
+		<param name="tabletag_stable_threshold" value="100"/>
 	</node>
 </launch>
