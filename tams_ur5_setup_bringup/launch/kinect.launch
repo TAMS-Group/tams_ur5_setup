@@ -6,5 +6,7 @@
 
 	<include file="$(find tams_ur5_setup_bringup)/launch/apriltags2.launch"/>
 
-	<include file="$(find camera_positioner)/launch/camera_positioner.launch"/>
+	<include file="$(find camera_positioner)/launch/camera_positioner.launch">
+		<rosparam param="bundle_tags">[128, 154, 162, 164]</rosparam>
+	</include>
 </launch>
