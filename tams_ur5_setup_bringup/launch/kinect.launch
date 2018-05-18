@@ -3,10 +3,10 @@
 	<include file="$(find freenect_launch)/launch/freenect.launch">
 		<arg name="depth_registration" value="true" />
 	</include>
-        <node pkg="apriltags_ros" type="apriltag_detector_node" name="apriltag_detector">
-		<rosparam param="tag_descriptions">[{id: 0, size: 0.161}]</rosparam>
-		<remap from="/image_rect" to="/camera/rgb/image_rect_color"/>
-		<remap from="/camera_info" to="/camera/rgb/camera_info"/>
-	</node>
-	<include file="$(find camera_positioner)/launch/camera_positioner.launch"/>
+
+	<include file="$(find tams_ur5_setup_bringup)/launch/apriltags2.launch"/>
+
+	<include file="$(find camera_positioner)/launch/camera_positioner.launch">
+		<rosparam param="bundle_tags">[128, 154, 162, 164]</rosparam>
+	</include>
 </launch>

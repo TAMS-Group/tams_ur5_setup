@@ -4,12 +4,11 @@
 		<arg name="publish_tf" value="true"/>
 		<arg name="calib_path" value="$(find tams_ur5_setup_bringup)/config/kinect2_calib/" />
 	</include>
-	<node pkg="apriltags_ros" type="apriltag_detector_node" name="apriltag_detector">
-		<rosparam param="tag_descriptions">[{id: 0, size: 0.161},{id: 42, size: 0.1535}]</rosparam>
-		<remap from="/image_rect" to="/kinect2/qhd/image_color_rect"/>
-		<remap from="/camera_info" to="/kinect2/qhd/camera_info"/>
-	</node>
+
+	<include file="$(find tams_ur5_setup_bringup)/launch/apriltags2.launch"/>
+
 	<node pkg="camera_positioner" type="camera_positioner_table" name="camera_positioner_table">
+		<rosparam param="bundle_tags">[128, 154, 162, 164]</rosparam>
 		<param name="camera_rgb_optical_frame" value="kinect2_rgb_optical_frame"/>
 		<param name="camera_link" value="kinect2_link"/>
 		<param name="table_tag_id" value="42"/>
