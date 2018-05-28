@@ -2,10 +2,10 @@
 # Specific joint properties can be changed with the keys [max_position, min_position, max_velocity, max_acceleration]
 # Joint limits can be turned off with [has_velocity_limits, has_acceleration_limits]
 max_arm_velocity: &max_arm_velocity
-    max_velocity: 0.5
+    max_velocity: 1.0
 
 max_arm_acceleration: &max_arm_acceleration
-    max_acceleration: 0.5
+    max_acceleration: 1.0
 
 joint_limits:
   s_model_finger_1_joint_1:
