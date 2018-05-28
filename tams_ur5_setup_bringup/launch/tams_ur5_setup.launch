@@ -13,6 +13,8 @@
 
   <include file="$(find tams_ur5_setup_moveit_config)/launch/move_group.launch"/>
 
+<!--
   <include file="$(find tams_ur5_setup_bringup)/launch/xtion.launch"/>
+-->
 
 </launch>
