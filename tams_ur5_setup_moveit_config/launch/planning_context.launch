@@ -9,7 +9,9 @@
   <arg name="ur5_joint_ranges_config" default="$(find tams_ur5_description)/config/joint_ranges/default.yaml"/>
 
   <!-- Load universal robot description format (URDF) -->
-  <param if="$(arg load_robot_description)" name="$(arg robot_description)" command="$(find xacro)/xacro --inorder '$(find tams_ur5_setup_description)/urdf/tams_ur5_setup.urdf.xacro' joint_ranges_config:=$(arg ur5_joint_ranges_config)"/>
+  <include file="$(find tams_ur5_setup_description)/launch/tams_ur5_setup_upload.launch">
+    <arg name="joint_ranges_config" value="$(arg ur5_joint_ranges_config)" />
+  </include>
 
   <!-- The semantic description that corresponds to the URDF -->
   <param name="$(arg robot_description)_semantic" textfile="$(find tams_ur5_setup_moveit_config)/config/tams_ur5_setup.srdf" />
