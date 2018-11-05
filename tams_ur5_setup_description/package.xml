@@ -10,6 +10,4 @@
 
   <buildtool_depend>catkin</buildtool_depend>
   <run_depend>ur_description</run_depend>
-  <run_depend>robotiq_s_model_visualization</run_depend>
-  <run_depend>robotiq_force_torque_sensor</run_depend>
 </package>
