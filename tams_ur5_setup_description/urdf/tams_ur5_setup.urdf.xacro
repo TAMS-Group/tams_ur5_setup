@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro"
-       name="tams_ur5_setup" > 
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="tams_ur5_setup" >
   
   <xacro:property name="pi" value="3.1415926535897931" />
   <!-- tams corner -->
