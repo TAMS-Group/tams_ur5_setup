@@ -2,8 +2,12 @@
   <!-- Specifies the joint ranges of the ur5 that should be used in the URDF -->
   <arg name="ur5_joint_ranges_config" default="$(find tams_ur5_description)/config/joint_ranges/default.yaml" />
 
+  <!--Set if use r200 camera-->
+  <arg name="r200" default="false"/>
+
   <include file="$(find tams_ur5_setup_moveit_config)/launch/planning_context.launch">
     <arg name="ur5_joint_ranges_config" value="$(arg ur5_joint_ranges_config)" />
+    <arg name="r200" value="$(arg r200)"/>
   </include>
 
   <!-- GDB Debug Option -->
