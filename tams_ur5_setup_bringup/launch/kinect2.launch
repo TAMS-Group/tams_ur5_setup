@@ -5,7 +5,7 @@
 		<arg name="calib_path" value="$(find tams_ur5_setup_bringup)/config/kinect2_calib/" />
 	</include>
 
-	<include file="$(find tams_ur5_setup_bringup)/launch/apriltags2.launch"/>
+	<include file="$(find tams_ur5_setup_bringup)/launch/apriltag.launch"/>
 
 	<node pkg="camera_positioner" type="camera_positioner" name="camera_positioner">
 		<rosparam param="bundle_tags">[128, 154, 162, 164]</rosparam>
