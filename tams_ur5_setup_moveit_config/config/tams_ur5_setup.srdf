@@ -96,6 +96,14 @@
         <joint name="ur5_wrist_2_joint" value="1.5708" />
         <joint name="ur5_wrist_3_joint" value="0" />
     </group_state>
+    <group_state name="blackjack_idle" group="arm">
+        <joint name="ur5_elbow_joint" value="-2.084712330495016" />
+        <joint name="ur5_shoulder_lift_joint" value="4.5123443603515625" />
+        <joint name="ur5_shoulder_pan_joint" value="3.7199199199676514" />
+        <joint name="ur5_wrist_1_joint" value="5.427403450012207" />
+        <joint name="ur5_wrist_2_joint" value="1.5711592435836792" />
+        <joint name="ur5_wrist_3_joint" value="5.290195465087891" />
+    </group_state>
     <group_state name="extended" group="arm">
         <joint name="ur5_elbow_joint" value="0" />
         <joint name="ur5_shoulder_lift_joint" value="-3.1413" />
