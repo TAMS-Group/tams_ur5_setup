@@ -7,60 +7,63 @@ max_arm_velocity: &max_arm_velocity
 max_arm_acceleration: &max_arm_acceleration
     max_acceleration: 1.0
 
+max_finger_velocity: &max_finger_velocity
+    max_velocity: 0.5
+
 joint_limits:
   s_model_finger_1_joint_1:
     has_velocity_limits: true
-    max_velocity: 100
+    <<: *max_finger_velocity
     has_acceleration_limits: false
     max_acceleration: 0
   s_model_finger_1_joint_2:
     has_velocity_limits: true
-    max_velocity: 100
+    <<: *max_finger_velocity
     has_acceleration_limits: false
     max_acceleration: 0
   s_model_finger_1_joint_3:
     has_velocity_limits: true
-    max_velocity: 100
+    <<: *max_finger_velocity
     has_acceleration_limits: false
     max_acceleration: 0
   s_model_finger_2_joint_1:
     has_velocity_limits: true
-    max_velocity: 100
+    <<: *max_finger_velocity
     has_acceleration_limits: false
     max_acceleration: 0
   s_model_finger_2_joint_2:
     has_velocity_limits: true
-    max_velocity: 100
+    <<: *max_finger_velocity
     has_acceleration_limits: false
     max_acceleration: 0
   s_model_finger_2_joint_3:
     has_velocity_limits: true
-    max_velocity: 100
+    <<: *max_finger_velocity
     has_acceleration_limits: false
     max_acceleration: 0
   s_model_finger_middle_joint_1:
     has_velocity_limits: true
-    max_velocity: 100
+    <<: *max_finger_velocity
     has_acceleration_limits: false
     max_acceleration: 0
   s_model_finger_middle_joint_2:
     has_velocity_limits: true
-    max_velocity: 100
+    <<: *max_finger_velocity
     has_acceleration_limits: false
     max_acceleration: 0
   s_model_finger_middle_joint_3:
     has_velocity_limits: true
-    max_velocity: 100
+    <<: *max_finger_velocity
     has_acceleration_limits: false
     max_acceleration: 0
   s_model_palm_finger_1_joint:
     has_velocity_limits: true
-    max_velocity: 100
+    <<: *max_finger_velocity
     has_acceleration_limits: false
     max_acceleration: 0
   s_model_palm_finger_2_joint:
     has_velocity_limits: true
-    max_velocity: 100
+    <<: *max_finger_velocity
     has_acceleration_limits: false
     max_acceleration: 0
   ur5_elbow_joint:

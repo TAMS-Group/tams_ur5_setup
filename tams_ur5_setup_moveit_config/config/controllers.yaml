@@ -2,6 +2,8 @@ controller_list:
  - name: follow_joint_trajectory
    action_ns: ""
    type: FollowJointTrajectory
+   allowed_execution_duration_scaling: 1.2
+   allowed_goal_duration_margin: 0.5
    joints:
       - ur5_shoulder_pan_joint
       - ur5_shoulder_lift_joint
@@ -12,9 +14,9 @@ controller_list:
 
  - name: gripper_action
    action_ns: ""
-   type: GripperCommand
-   default: true
-   command_joint: s_model_finger_middle_joint_1
+   type: FollowJointTrajectory
+   allowed_execution_duration_scaling: 5.0
+   allowed_goal_duration_margin: 0.5
    joints:
       - s_model_palm_finger_1_joint
       - s_model_finger_1_joint_1
