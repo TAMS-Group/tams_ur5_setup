@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- This argument enables using a customized configuration of the ur5 joint ranges.
+       Example configuration files can be found inside tams_ur5_description under config/joint_ranges/. -->
+  <arg name="ur5_joint_ranges_config" default="$(find tams_ur5_description)/config/joint_ranges/default.yaml"/>
+  <include file="$(find tams_ur5_setup_description)/launch/tams_ur5_setup_upload.launch">
+    <arg name="joint_ranges_config" value="$(arg ur5_joint_ranges_config)"/>
+  </include>
+
+  <!--
+  <include file="$(find ur_description)/launch/ur5_upload.launch">
+    <arg name="limited" value="false"/>
+  </include>
+  -->
+  
+  <node name="hardware_interface" pkg="ur_robot_driver" type="ur_robot_driver_node" output="screen">
+    <param name="robot_ip" type="str" value="192.168.1.12"/>
+    <param name="script_file" value="$(find ur_robot_driver)/resources/servoj.urscript"/>
+    <param name="output_recipe_file" value="$(find ur_robot_driver)/resources/rtde_output_recipe.txt"/>
+    <param name="input_recipe_file" value="$(find ur_robot_driver)/resources/rtde_input_recipe.txt"/>
+    <param name="headless_mode" value="true"/>
+    <param name="tf_prefix" value="ur5_"/>
+    <param name="use_tool_communication" value="false"/>
+    <rosparam>
+      joints:
+        - ur5_shoulder_pan_joint
+        - ur5_shoulder_lift_joint
+        - ur5_elbow_joint
+        - ur5_wrist_1_joint
+        - ur5_wrist_2_joint
+        - ur5_wrist_3_joint
+    </rosparam>
+  </node>
+
+  <rosparam>
+    joint_state_controller:
+      type: joint_state_controller/JointStateController
+      publish_rate: 500
+    joint_trajectory_controller:
+      type: position_controllers/JointTrajectoryController
+      joints:
+        - ur5_shoulder_pan_joint
+        - ur5_shoulder_lift_joint
+        - ur5_elbow_joint
+        - ur5_wrist_1_joint
+        - ur5_wrist_2_joint
+        - ur5_wrist_3_joint
+      joint_trajectory_action_node:
+        joints:
+          - ur5_shoulder_pan_joint
+          - ur5_shoulder_lift_joint
+          - ur5_elbow_joint
+          - ur5_wrist_1_joint
+          - ur5_wrist_2_joint
+          - ur5_wrist_3_joint
+  </rosparam>
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="joint_trajectory_controller joint_state_controller"/>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
+
+  <!-- add from tams roboti q gripper  -->
+  <!-- Gripper -->
+  <arg name="gripper_start_mode" default="basic"/>
+
+<!--  <node name="robotiqSModel" pkg="robotiq_s_model_control" type="SModelTcpNode.py" args="$(arg hand_ip)"/>-->
+<node name="robotiq3fGripper" pkg="robotiq_3f_gripper_control" type="Robotiq3FGripperRtuNode.py" args="/dev/rfcomm2"/>
+<node name="robotiq3fGripperStatePublisher" pkg="robotiq_3f_gripper_joint_state_publisher" type="robotiq_3f_gripper_joint_states">
+  <param name="prefix" value="s_model_" />
+</node>
+<!-- Gripper action server-->
+<include file="$(find robotiq_s_model_action_server)/launch/robotiq_s_model_action_server.launch">
+  <arg name="gripper_start_mode" value="$(arg gripper_start_mode)"/>
+</include>
+
+<!-- Force Torque 150 -->
+<node name="forceTorque" pkg="robotiq_ft_sensor" type="rq_sensor">
+  <param name="frame_id" value="ft_robotiq_force_torque_frame_id"/>
+  <param name="serial_id" value="rfcomm1"/>
+</node>
+
+<!-- add from tams roboti q gripper  -->
+
+  <include file="$(find tams_ur5_setup_moveit_config)/launch/move_group.launch"/>
+</launch>
