@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <launch>
     <arg name="r200" default="false"/>
+    <arg name="kinect2_number" default="no_5"/>
     <include file="$(find tams_ur5_bringup)/launch/tams_ur5_drivers.launch">
         <arg name="gripper_start_mode" value="wide_pinch"/>
     </include>
@@ -17,6 +18,8 @@
         <arg name="r200" value="$(arg r200)"/>
     </include>
 
-    <include file="$(find tams_ur5_setup_bringup)/launch/kinect2.launch"/>
+    <include file="$(find tams_ur5_setup_bringup)/launch/kinect2.launch">
+        <arg name="kinect2_number" value="$(arg kinect2_number)"/>
+    </include>
 </launch>
 
