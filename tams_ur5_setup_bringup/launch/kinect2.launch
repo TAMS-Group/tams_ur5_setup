@@ -1,8 +1,10 @@
 <?xml version="1.0"?>
 <launch>
 	<arg name="kinect2_number" default="no_5"/>
+	<arg name="output" default="log"/>
 	<include file="$(find kinect2_bridge)/launch/kinect2_bridge.launch">
 		<arg name="publish_tf" value="true"/>
+		<arg name="output" value="$(arg output)"/>
 		<arg name="calib_path" value="$(find tams_camera_config)/kinect2/$(arg kinect2_number)/" />
 	</include>
 
