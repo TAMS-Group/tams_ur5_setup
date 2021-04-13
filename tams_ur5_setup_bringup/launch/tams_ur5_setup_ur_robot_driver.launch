@@ -7,54 +7,17 @@
     <arg name="joint_ranges_config" value="$(arg ur5_joint_ranges_config)"/>
   </include>
 
-  <!--
-  <include file="$(find ur_description)/launch/ur5_upload.launch">
-    <arg name="limited" value="false"/>
-  </include>
-  -->
-  
-  <node name="hardware_interface" pkg="ur_robot_driver" type="ur_robot_driver_node" output="screen">
-    <param name="robot_ip" type="str" value="192.168.1.12"/>
-    <param name="script_file" value="$(find ur_robot_driver)/resources/servoj.urscript"/>
-    <param name="output_recipe_file" value="$(find ur_robot_driver)/resources/rtde_output_recipe.txt"/>
-    <param name="input_recipe_file" value="$(find ur_robot_driver)/resources/rtde_input_recipe.txt"/>
-    <param name="headless_mode" value="true"/>
+  <include file="$(find ur_robot_driver)/launch/ur_control.launch">
+    <arg name="headless_mode" value="true"/>
     <param name="tf_prefix" value="ur5_"/>
-    <param name="use_tool_communication" value="false"/>
-    <rosparam>
-      joints:
-        - ur5_shoulder_pan_joint
-        - ur5_shoulder_lift_joint
-        - ur5_elbow_joint
-        - ur5_wrist_1_joint
-        - ur5_wrist_2_joint
-        - ur5_wrist_3_joint
-    </rosparam>
-  </node>
+    <arg name="robot_ip" value="192.168.1.12" />
+    <arg name="controllers" default="joint_state_controller scaled_pos_joint_traj_controller speed_scaling_state_controller force_torque_sensor_controller"/>
+    <arg name="stopped_controllers" default="pos_joint_traj_controller joint_group_vel_controller" doc="Controllers that are initally loaded, but not started."/>
 
-  <rosparam>
-    joint_state_controller:
-      type: joint_state_controller/JointStateController
-      publish_rate: 500
-    joint_trajectory_controller:
-      type: position_controllers/JointTrajectoryController
-      joints:
-        - ur5_shoulder_pan_joint
-        - ur5_shoulder_lift_joint
-        - ur5_elbow_joint
-        - ur5_wrist_1_joint
-        - ur5_wrist_2_joint
-        - ur5_wrist_3_joint
-      joint_trajectory_action_node:
-        joints:
-          - ur5_shoulder_pan_joint
-          - ur5_shoulder_lift_joint
-          - ur5_elbow_joint
-          - ur5_wrist_1_joint
-          - ur5_wrist_2_joint
-          - ur5_wrist_3_joint
-  </rosparam>
-  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="joint_trajectory_controller joint_state_controller"/>
+    <arg name="controller_config_file" value="$(find tams_ur5_setup_description)/config/ur5_controllers.yaml" />
+    <arg name="kinematics_config" value="$(find tams_ur5_setup_description)/config/tams_ur5_calibration.yaml" />
+    <arg name="use_tool_communication" value="false"/>
+  </include>
 
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
 

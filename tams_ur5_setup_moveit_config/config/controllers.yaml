@@ -1,6 +1,6 @@
 controller_list:
- - name: follow_joint_trajectory
-   action_ns: ""
+ - name: pos_joint_traj_controller
+   action_ns: follow_joint_trajectory
    type: FollowJointTrajectory
    allowed_execution_duration_scaling: 1.2
    allowed_goal_duration_margin: 0.5
