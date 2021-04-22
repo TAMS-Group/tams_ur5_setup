@@ -7,7 +7,7 @@
         <arg name="joint_ranges_config" value="$(arg ur5_joint_ranges_config)"/>
     </include>
 
-    <include file="$(find ur_robot_driver)/launch/ur_control.launch">
+    <include file="$(find tams_ur5_setup_bringup)/launch/ur_control.launch">
         <arg name="headless_mode" value="true"/>
         <param name="tf_prefix" value="ur5_"/>
         <arg name="robot_ip" value="192.168.1.12"/>
