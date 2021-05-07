@@ -2,7 +2,7 @@
 <launch>
     <!-- This argument enables using a customized configuration of the ur5 joint ranges.
          Example configuration files can be found inside tams_ur5_description under config/joint_ranges/. -->
-    <arg name="ur5_joint_ranges_config" default="$(find tams_ur5_description)/config/joint_ranges/default.yaml"/>
+    <arg name="ur5_joint_ranges_config" default="$(find tams_ur5_description)/config/joint_ranges/default.yaml"/>  <!-- default.yaml or restricted.yaml -->
     <include file="$(find tams_ur5_setup_description)/launch/tams_ur5_setup_upload.launch">
         <arg name="joint_ranges_config" value="$(arg ur5_joint_ranges_config)"/>
     </include>
@@ -14,7 +14,7 @@
         <arg name="controllers"
              default="joint_state_controller scaled_pos_joint_traj_controller speed_scaling_state_controller force_torque_sensor_controller"/>
         <arg name="stopped_controllers" default="pos_joint_traj_controller joint_group_vel_controller"
-             doc="Controllers that are initally loaded, but not started."/>
+             doc="Controllers that are initially loaded, but not started."/>
 
         <arg name="controller_config_file" value="$(find tams_ur5_setup_description)/config/ur5_controllers.yaml"/>
         <arg name="kinematics_config" value="$(find tams_ur5_setup_description)/config/tams_ur5_calibration.yaml"/>
@@ -35,7 +35,7 @@
 
     <!-- add from tams robotiq gripper  -->
     <!-- Gripper -->
-    <arg name="gripper_start_mode" default="basic"/>
+    <arg name="gripper_start_mode" default="basic"/>   <!-- basic or pinch -->
 
     <!--  <node name="robotiqSModel" pkg="robotiq_s_model_control" type="SModelTcpNode.py" args="$(arg hand_ip)"/>-->
     <node name="robotiq3fGripper" pkg="robotiq_3f_gripper_control" type="Robotiq3FGripperRtuNode.py"
