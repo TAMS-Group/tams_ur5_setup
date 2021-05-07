@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="save_file" default="false"/>
+    <arg name="camera_ip" default="192.168.0.123"/>
+
+    <node name="mechmind_camera_start" pkg="mecheye_ros_interface" type="start" output="screen">
+        <param name="save_file" value="$(arg save_file)"/>
+        <param name="camera_ip" value="$(arg camera_ip)"/>
+    </node>
+
+    <!-- start apriltag code -->
+    <node pkg="apriltag_ros" type="apriltag_ros_continuous_node" name="apriltag_ros_continuous_node" clear_params="true" >
+        <!-- Remap topics from those used in code to those on the ROS network -->
+        <remap from="image_rect" to="/mechmind/color_image" />
+        <remap from="camera_info" to="/mechmind/camera_info" />
+
+        <param name="camera_frame" type="str" value="camera" />
+        <param name="publish_tag_detections_image" type="bool" value="false" />      <!-- default: false -->
+
+        <rosparam command="load" file="$(find tams_ur5_setup_bringup)/config/apriltag/settings.yaml"/>
+        <rosparam command="load" file="$(find tams_ur5_setup_bringup)/config/apriltag/tags.yaml"/>
+    </node>
+
+    <!-- get camera to world transform -->
+    <node pkg="camera_positioner" type="camera_positioner" name="camera_positioner">
+        <rosparam param="bundle_tags">[128, 154, 162, 164]</rosparam>
+        <param name="camera_rgb_optical_frame" value="kinect2_rgb_optical_frame"/>
+        <param name="camera_link" value="kinect2_link"/>
+        <param name="shared_frame" value="ur5_mount_plate"/>
+        <param name="world_frame" value="world"/>
+        <param name="static_camera" value="true"/>
+    </node>
+</launch>

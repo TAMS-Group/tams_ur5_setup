@@ -14,7 +14,6 @@
     </include>
 </group>
 <group unless="$(arg use_kinect)">
-    <!-- todo: add launch file for mechmind camera-->
     <include file="$(find tams_ur5_setup_bringup)/launch/mechmind.launch"/>
 </group>
 </launch>
