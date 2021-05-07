@@ -3,6 +3,7 @@
     <!-- This argument enables using a customized configuration of the ur5 joint ranges.
          Example configuration files can be found inside tams_ur5_description under config/joint_ranges/. -->
     <arg name="ur5_joint_ranges_config" default="$(find tams_ur5_description)/config/joint_ranges/default.yaml"/>
+    <arg name="r200" default="false"/>
     <include file="$(find tams_ur5_setup_description)/launch/tams_ur5_setup_upload.launch">
         <arg name="joint_ranges_config" value="$(arg ur5_joint_ranges_config)"/>
     </include>
@@ -23,10 +24,10 @@
         <!-- detail: https://github.com/TAMS-Group/Universal_Robots_ROS_Driver/commit/0833aa340f751909f759aa2e153e69da1a1494fa-->
         <!-- Specify gain for servoing to position in joint space.-->
         <!-- A higher gain can sharpen the trajectory.-->
-        <arg name="servoj_gain" value="200"/>  <!-- smooth the trajectory, default 2000-->
+        <arg name="servoj_gain" value="300"/>  <!-- smooth the trajectory, default 2000-->
         <!-- Specify lookahead time for servoing to position in joint space.-->
         <!-- A longer lookahead time can smooth the trajectory.-->
-        <arg name="servoj_lookahead_time" value="0.1"/>  <!-- smooth the trajectory, default 0.03-->
+        <arg name="servoj_lookahead_time" value="0.075"/>  <!-- smooth the trajectory, default 0.03-->
 
     </include>
 
@@ -57,5 +58,7 @@
 
     <!-- add from tams robotiq gripper  -->
 
-    <include file="$(find tams_ur5_setup_moveit_config)/launch/move_group.launch"/>
+    <include file="$(find tams_ur5_setup_moveit_config)/launch/move_group.launch">
+        <arg name="r200" value="$(arg r200)"/>
+    </include>
 </launch>
