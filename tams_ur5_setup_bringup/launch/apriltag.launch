@@ -1,14 +1,14 @@
 <launch>
-  
-  <node pkg="apriltag_ros" type="apriltag_ros_continuous_node" name="apriltag_ros_continuous_node" clear_params="true" >
-    <!-- Remap topics from those used in code to those on the ROS network -->
-    <remap from="image_rect" to="/kinect2/qhd/image_color_rect" />
-    <remap from="camera_info" to="/kinect2/qhd/camera_info" />
 
-    <param name="camera_frame" type="str" value="camera" />
-    <param name="publish_tag_detections_image" type="bool" value="false" />      <!-- default: false -->
+    <node pkg="apriltag_ros" type="apriltag_ros_continuous_node" name="apriltag_ros_continuous_node" clear_params="true" >
+        <!-- Remap topics from those used in code to those on the ROS network -->
+        <remap from="image_rect" to="/kinect2/qhd/image_color_rect" />
+        <remap from="camera_info" to="/kinect2/qhd/camera_info" />
 
-    <rosparam command="load" file="$(find tams_ur5_setup_bringup)/config/apriltag/settings.yaml"/>
-    <rosparam command="load" file="$(find tams_ur5_setup_bringup)/config/apriltag/tags.yaml"/>
-  </node>
+        <param name="camera_frame" type="str" value="camera" />
+        <param name="publish_tag_detections_image" type="bool" value="false" />      <!-- default: false -->
+
+        <rosparam command="load" file="$(find tams_ur5_setup_bringup)/config/apriltag/settings.yaml"/>
+        <rosparam command="load" file="$(find tams_ur5_setup_bringup)/config/apriltag/tags.yaml"/>
+    </node>
 </launch>
