@@ -9,7 +9,9 @@
   <xacro:property name="tabledepth" value="0.80" />
 
   <xacro:property name="tabletag_size" value="0.20" />
-
+  <material name="black">
+    <color rgba="0.0 0.0 0.0 1.0"/>
+  </material>
   <material name="white">
     <color rgba="1 1 1 1"/>
   </material>
