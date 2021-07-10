@@ -24,8 +24,8 @@
     <!-- get camera to world transform -->
     <node pkg="camera_positioner" type="camera_positioner" name="camera_positioner">
         <rosparam param="bundle_tags">[128, 154, 162, 164]</rosparam>
-        <param name="camera_rgb_optical_frame" value="kinect2_rgb_optical_frame"/>
-        <param name="camera_link" value="kinect2_link"/>
+        <param name="camera_rgb_optical_frame" value="mechmind_camera"/>
+        <param name="camera_link" value="mechmind_camera"/>
         <param name="shared_frame" value="ur5_mount_plate"/>
         <param name="world_frame" value="world"/>
         <param name="static_camera" value="true"/>
