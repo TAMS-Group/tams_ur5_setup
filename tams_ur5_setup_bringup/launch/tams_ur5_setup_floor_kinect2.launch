@@ -4,6 +4,7 @@
 <arg name="r200" default="false"/>
 <arg name="kinect2_number" default="no_5"/>
 <arg name="use_kinect" default="true"/>
+<node name="base_to_arm_base" pkg="tf2_ros" type="static_transform_publisher" args="0 0 0 0 0 0 ur5_base base" />
 <include file="$(find tams_ur5_setup_bringup)/launch/tams_ur5_setup_ur_robot_driver.launch">
     <arg name="gripper_start_mode" value="pinch"/>
 </include>

@@ -14,7 +14,7 @@
         <remap from="image_rect" to="/mechmind/color_image" />
         <remap from="camera_info" to="/mechmind/camera_info" />
 
-        <param name="camera_frame" type="str" value="camera" />
+        <param name="camera_frame" type="str" value="mechmind_camera" />
         <param name="publish_tag_detections_image" type="bool" value="false" />      <!-- default: false -->
 
         <rosparam command="load" file="$(find tams_ur5_setup_bringup)/config/apriltag/settings.yaml"/>
@@ -22,7 +22,7 @@
     </node>
 
     <!-- get camera to world transform -->
-    <node pkg="camera_positioner" type="camera_positioner" name="camera_positioner">
+    <node pkg="camera_positioner" type="camera_positioner" name="camera_positioner" output="screen">
         <rosparam param="bundle_tags">[128, 154, 162, 164]</rosparam>
         <param name="camera_rgb_optical_frame" value="mechmind_camera"/>
         <param name="camera_link" value="mechmind_camera"/>
