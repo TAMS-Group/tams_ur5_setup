@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"
+       name="arm" > 
+
+  <xacro:arg name="r200" default="false" />
+
+  <!-- include macro definitions -->
+  <xacro:include filename="$(find tams_ur5_description)/urdf/ur5.urdf.xacro" />
+  <xacro:include filename="$(find robotiq_3f_gripper_visualization)/cfg/robotiq-3f-gripper_articulated_macro.xacro"/>
+  <xacro:include filename="$(find robotiq_ft_sensor)/urdf/robotiq_fts150.urdf.xacro" />
+  <xacro:include filename="$(find tams_ur5_description)/urdf/ft_adapter.urdf.xacro" />
+  <xacro:include filename="$(find tams_ur5_description)/urdf/s_model_adapter.urdf.xacro" />
+  <xacro:include filename="$(find tams_ur5_description)/urdf/plug_collision_model.urdf.xacro" />
+  <xacro:include filename="$(find tams_ur5_description)/urdf/mounted_camera.urdf.xacro" />
+
+  <!-- arm -->
+  <!-- xamla_cap is a custom parameter in TAMS' fork of the universal_robot repository,
+       remove it if you want to use the upstream ur5 description instead -->
+  <xacro:ur5_robot prefix="ur5_" joint_limited="false" xamla_cap="true"/>
+
+  <!-- ft_adapter -->
+  <xacro:ft_adapter name="ft_adapter" parent="ur5_ee_link">
+    <origin xyz="0.0045 0.0 0.0" rpy="0.0 ${pi/2} 0.0" />
+  </xacro:ft_adapter>
+
+  <!-- mounted_camera -->
+  <xacro:if value="$(arg r200)">
+    <xacro:mounted_camera name="mounted_camera" parent="ft_adapter">
+        <origin xyz="0 0 0.0" rpy="0 0 0" />
+    </xacro:mounted_camera>
+  </xacro:if>
+
+  <!-- ft150 -->
+  <xacro:robotiq_fts150 prefix="ft_" parent="ur5_ee_link">
+    <origin xyz="0.009 0.0 0.0" rpy="0.0 ${-pi/2} ${pi}" />
+  </xacro:robotiq_fts150>
+
+  <!-- tool0 frame -->
+  <link name="tool0" />
+  <joint name="ft_fts_toolside_tool0" type="fixed">
+    <parent link="ft_fts_toolside"/>
+    <child link="tool0"/>
+    <origin xyz="0.0 0.0 0.0205" rpy="0.0 ${-pi/2} 0.0"/>
+  </joint>
+
+  <!-- s_model_adapter -->
+  <xacro:s_model_adapter name="s_model_adapter" parent="ft_fts_toolside">
+    <origin xyz="0.0 0.0 0.015" rpy="0.0 0.0 0.0" />
+  </xacro:s_model_adapter>
+
+  <!-- the adaptive gripper -->
+  <xacro:robotiq-3f-gripper_articulated prefix="s_model_"/>
+  <joint name="gripper_joint" type="fixed">
+    <parent link="tool0" />
+    <child link = "s_model_palm" />
+    <origin xyz="0.057 0.0 0.0" rpy="0.0 ${pi} ${-pi/2}" />
+  </joint>
+
+  <!-- plug collision model -->
+  <xacro:plug_collision_model name="plug_collision_model" parent="ur5_ee_link" >
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+  </xacro:plug_collision_model>
+</robot>

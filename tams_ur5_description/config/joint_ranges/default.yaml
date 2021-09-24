@@ -1,0 +1,46 @@
+# default.yaml
+# Specifies the upper and lower limits of ur5 joints in the urdf.
+# Default limits are 2.0 * pi = 6.2831853 for all joints except
+# for elbow_joint. elbow_joint is restricted to +/-pi due to hardware
+# limitations.
+#
+# Limits that align with the robots joint limits (+/- 2*pi) may allow
+# joint configurations that lead to protective stop.
+# To prevent that we substract a safety tolerance of 0.002.
+# 
+# shoulder_pan_joint:
+#     lower: -6.2811853
+#     upper: 6.2811853
+# shoulder_lift_joint:
+#     lower: -6.2811853
+#     upper: 6.2811853
+# elbow_joint: 
+#     lower: -3.1415926
+#     upper: 3.1415926
+# wrist_1_joint:
+#     lower: -6.2811853
+#     upper: 6.2811853
+# wrist_2_joint:
+#     lower: -6.2811853
+#     upper: 6.2811853
+# wrist_3_joint:
+#     lower: -6.2811853
+#     upper: 6.2811853
+shoulder_pan_joint:
+    lower: -6.2811853
+    upper: 6.2811853
+shoulder_lift_joint:
+    lower: -6.2811853
+    upper: 6.2811853
+elbow_joint: 
+    lower: -3.1415926
+    upper: 3.1415926
+wrist_1_joint:
+    lower: -6.2811853
+    upper: 6.2811853
+wrist_2_joint:
+    lower: -3.1415926
+    upper: 3.1415926
+wrist_3_joint:
+    lower: -6.2811853
+    upper: 6.2811853
