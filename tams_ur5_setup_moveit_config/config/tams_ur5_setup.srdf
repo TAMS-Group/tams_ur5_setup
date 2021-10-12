@@ -262,9 +262,25 @@
     <group_state name="present_gripper" group="arm">
         <joint name="ur5_elbow_joint" value="0.0" />
         <joint name="ur5_shoulder_lift_joint" value="-3.15139" />
-        <joint name="ur5_shoulder_pan_joint" value="-1.57076" />S
+        <joint name="ur5_shoulder_pan_joint" value="-1.57076" />
         <joint name="ur5_wrist_1_joint" value="1.57068" />
         <joint name="ur5_wrist_2_joint" value="1.57098" />
+        <joint name="ur5_wrist_3_joint" value="0.0" />
+    </group_state>
+    <group_state name="clothes_hanger" group="arm">
+        <joint name="ur5_elbow_joint" value="-0.5160163084613245" />
+        <joint name="ur5_shoulder_lift_joint" value="-2.0983031431781214" />
+        <joint name="ur5_shoulder_pan_joint" value="-1.57076" />
+        <joint name="ur5_wrist_1_joint" value="-2.0868638197528284" />
+        <joint name="ur5_wrist_2_joint" value="1.57098" />
+        <joint name="ur5_wrist_3_joint" value="0.0" />
+    </group_state>
+    <group_state name="clothes_reach" group="arm">
+        <joint name="ur5_elbow_joint" value="0" />
+        <joint name="ur5_shoulder_lift_joint" value="-2.529156510029928" />
+        <joint name="ur5_shoulder_pan_joint" value="-0.7769277731524866" />
+        <joint name="ur5_wrist_1_joint" value="-2.1774686018573206" />
+        <joint name="ur5_wrist_2_joint" value="1.571" />
         <joint name="ur5_wrist_3_joint" value="0.0" />
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
