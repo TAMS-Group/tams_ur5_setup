@@ -10,7 +10,7 @@
 
     <include file="$(find ur_robot_driver)/launch/ur_control.launch">
         <arg name="headless_mode" value="true"/>
-        <param name="tf_prefix" value="ur5_"/>
+        <arg name="tf_prefix" value="ur5_"/>
         <arg name="robot_ip" value="192.168.1.12"/>
         <arg name="controllers" default="pos_joint_traj_controller joint_state_controller"/>
         <arg name="stopped_controllers" default="joint_group_vel_controller"/>
