@@ -22,7 +22,7 @@
 
   <!-- Loads the joint ranges configuration of the ur5 -->
   <xacro:arg name="joint_ranges_config" default="$(find tams_ur5_description)/config/joint_ranges/default.yaml" />
-  <xacro:property name="joint_limits" value="${load_yaml('$(arg joint_ranges_config)')}"/>
+  <xacro:property name="joint_limits" value="${xacro.load_yaml('$(arg joint_ranges_config)')}"/>
 
   <!-- Kinematic model -->
   <!-- Properties from urcontrol.conf -->
