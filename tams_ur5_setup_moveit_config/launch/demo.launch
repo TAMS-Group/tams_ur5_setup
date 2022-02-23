@@ -9,6 +9,7 @@
 
   <!-- By default, we are not in debug mode -->
   <arg name="debug" default="false" />
+  <arg name="start_rviz" default="true" />
 
   <!--
   By default, hide joint_state_publisher's GUI
@@ -49,11 +50,12 @@
   </include>
 
   <!-- Run Rviz and load the default config to see the state of the move_group node -->
+  <group if="$(arg start_rviz)">
   <include file="$(find tams_ur5_setup_moveit_config)/launch/moveit_rviz.launch">
     <arg name="config" value="true"/>
     <arg name="debug" value="$(arg debug)"/>
   </include>
-
+  </group>
   <!-- If database loading was enabled, start mongodb as well -->
   <include file="$(find tams_ur5_setup_moveit_config)/launch/default_warehouse_db.launch" if="$(arg db)">
     <arg name="moveit_warehouse_database_path" value="$(arg db_path)"/>
