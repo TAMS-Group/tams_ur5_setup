@@ -2,6 +2,7 @@
 <launch>
     <arg name="kinect2_number" default="no_5"/>
     <arg name="output" default="log"/>
+    <arg name="static_camera" default="false"/>
     <include file="$(find kinect2_bridge)/launch/kinect2_bridge.launch">
         <arg name="publish_tf" value="true"/>
         <arg name="output" value="$(arg output)"/>
@@ -16,6 +17,6 @@
         <param name="camera_link" value="kinect2_link"/>
         <param name="shared_frame" value="ur5_mount_plate"/>
         <param name="world_frame" value="world"/>
-        <param name="static_camera" value="true"/>
+        <param name="static_camera" value="$(arg static_camera)"/>
     </node>
 </launch>

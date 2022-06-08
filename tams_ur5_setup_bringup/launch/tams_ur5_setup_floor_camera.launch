@@ -1,10 +1,12 @@
 <?xml version="1.0"?>
 <!--updated to adapt the official UR driver - Hongzhuo 2021.05.07 -->
 <launch>
-<arg name="r200" default="false"/>
 <arg name="kinect2_number" default="no_5"/>
 <arg name="use_kinect" default="true"/>
 <arg name="demo_mode" default="false"/>
+<arg name="gripper_start_mode" default="pinch"/>
+<arg name="static_camera" default="false"/>
+
 <node name="base_to_arm_base" pkg="tf2_ros" type="static_transform_publisher" args="0 0 0 0 0 0 ur5_base base" />
 
 <group if="$(arg demo_mode)">
@@ -14,17 +16,20 @@
 </group>
 <group unless="$(arg demo_mode)">
     <include file="$(find tams_ur5_setup_bringup)/launch/tams_ur5_setup_ur_robot_driver.launch">
-        <arg name="gripper_start_mode" value="pinch"/>
+        <arg name="gripper_start_mode" value="$(arg gripper_start_mode)"/>
     </include>
 </group>
 
 <group if="$(arg use_kinect)">
     <include file="$(find tams_ur5_setup_bringup)/launch/kinect2.launch">
         <arg name="kinect2_number" value="$(arg kinect2_number)"/>
+        <arg name="static_camera" value="$(arg static_camera)"/>
     </include>
 </group>
 <group unless="$(arg use_kinect)">
-    <include file="$(find tams_ur5_setup_bringup)/launch/mechmind.launch"/>
+    <include file="$(find tams_ur5_setup_bringup)/launch/mechmind.launch">
+        <arg name="static_camera" value="$(arg static_camera)"/>
+    </include>
     <!-- <include file="$(find tams_ur5_setup_bringup)/launch/azure_kinect.launch"/>-->
 </group>
 </launch>
