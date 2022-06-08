@@ -3,6 +3,8 @@
 <launch>
 <arg name="kinect2_number" default="no_5"/>
 <arg name="use_kinect" default="true"/>
+<arg name="use_mechmind" default="false"/>
+<arg name="use_azure" default="false"/>
 <arg name="demo_mode" default="false"/>
 <arg name="gripper_start_mode" default="pinch"/>
 <arg name="static_camera" default="false"/>
@@ -26,10 +28,15 @@
         <arg name="static_camera" value="$(arg static_camera)"/>
     </include>
 </group>
-<group unless="$(arg use_kinect)">
+<group if="$(arg use_mechmind)">
     <include file="$(find tams_ur5_setup_bringup)/launch/mechmind.launch">
         <arg name="static_camera" value="$(arg static_camera)"/>
     </include>
-    <!-- <include file="$(find tams_ur5_setup_bringup)/launch/azure_kinect.launch"/>-->
 </group>
+<group if="$(arg use_azure)">
+    <include file="$(find tams_ur5_setup_bringup)/launch/azure_kinect.launch">
+        <arg name="static_camera" value="$(arg static_camera)"/>
+    </include>
+</group>
+
 </launch>
