@@ -273,7 +273,7 @@
         <joint name="ur5_shoulder_pan_joint" value="-1.57076" />
         <joint name="ur5_wrist_1_joint" value="-2.0868638197528284" />
         <joint name="ur5_wrist_2_joint" value="1.57098" />
-        <joint name="ur5_wrist_3_joint" value="0.0" />
+        <joint name="ur5_wrist_3_joint" value="-3.141" />
     </group_state>
     <group_state name="clothes_reach" group="arm">
         <joint name="ur5_elbow_joint" value="0" />
@@ -281,7 +281,7 @@
         <joint name="ur5_shoulder_pan_joint" value="-0.7769277731524866" />
         <joint name="ur5_wrist_1_joint" value="-2.1774686018573206" />
         <joint name="ur5_wrist_2_joint" value="1.571" />
-        <joint name="ur5_wrist_3_joint" value="0.0" />
+        <joint name="ur5_wrist_3_joint" value="-3.141" />
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="gripper" parent_link="s_model_tool0" group="gripper" parent_group="arm" />
