@@ -293,6 +293,7 @@
     <disable_collisions link1="april_tag_ur5" link2="ft_fts_robotside" reason="User" />
     <disable_collisions link1="april_tag_ur5" link2="plug_collision_model_link_1" reason="User" />
     <disable_collisions link1="april_tag_ur5" link2="plug_collision_model_link_2" reason="User" />
+    <disable_collisions link1="april_tag_ur5" link2="plug_collision_model_link_3" reason="User" />
     <disable_collisions link1="april_tag_ur5" link2="s_model_adapter" reason="User" />
     <disable_collisions link1="april_tag_ur5" link2="s_model_finger_1_link_0" reason="User" />
     <disable_collisions link1="april_tag_ur5" link2="s_model_finger_1_link_1" reason="User" />
@@ -386,6 +387,7 @@
     <disable_collisions link1="ft_adapter" link2="ft_fts_robotside" reason="Default" />
     <disable_collisions link1="ft_adapter" link2="plug_collision_model_link_1" reason="Never" />
     <disable_collisions link1="ft_adapter" link2="plug_collision_model_link_2" reason="Never" />
+    <disable_collisions link1="ft_adapter" link2="plug_collision_model_link_3" reason="Never" />
     <disable_collisions link1="ft_adapter" link2="s_model_adapter" reason="Never" />
     <disable_collisions link1="ft_adapter" link2="s_model_finger_1_link_0" reason="Never" />
     <disable_collisions link1="ft_adapter" link2="s_model_finger_1_link_1" reason="Never" />
@@ -406,6 +408,7 @@
     <disable_collisions link1="ft_adapter" link2="ur5_wrist_3_link" reason="Never" />
     <disable_collisions link1="ft_fts_robotside" link2="plug_collision_model_link_1" reason="Default" />
     <disable_collisions link1="ft_fts_robotside" link2="plug_collision_model_link_2" reason="Default" />
+    <disable_collisions link1="ft_fts_robotside" link2="plug_collision_model_link_3" reason="Default" />
     <disable_collisions link1="ft_fts_robotside" link2="s_model_adapter" reason="Adjacent" />
     <disable_collisions link1="ft_fts_robotside" link2="s_model_finger_1_link_0" reason="Never" />
     <disable_collisions link1="ft_fts_robotside" link2="s_model_finger_1_link_1" reason="Never" />
@@ -464,6 +467,26 @@
     <disable_collisions link1="plug_collision_model_link_2" link2="ur5_wrist_1_link" reason="Never" />
     <disable_collisions link1="plug_collision_model_link_2" link2="ur5_wrist_2_link" reason="Never" />
     <disable_collisions link1="plug_collision_model_link_2" link2="ur5_wrist_3_link" reason="Never" />
+    <disable_collisions link1="plug_collision_model_link_3" link2="s_model_adapter" reason="Never" />
+    <disable_collisions link1="plug_collision_model_link_3" link2="s_model_finger_1_link_0" reason="Never" />
+    <disable_collisions link1="plug_collision_model_link_3" link2="s_model_finger_1_link_1" reason="Never" />
+    <disable_collisions link1="plug_collision_model_link_3" link2="s_model_finger_1_link_2" reason="Never" />
+    <disable_collisions link1="plug_collision_model_link_3" link2="s_model_finger_1_link_3" reason="Never" />
+    <disable_collisions link1="plug_collision_model_link_3" link2="s_model_finger_2_link_0" reason="Never" />
+    <disable_collisions link1="plug_collision_model_link_3" link2="s_model_finger_2_link_1" reason="Never" />
+    <disable_collisions link1="plug_collision_model_link_3" link2="s_model_finger_2_link_2" reason="Never" />
+    <disable_collisions link1="plug_collision_model_link_3" link2="s_model_finger_2_link_3" reason="Never" />
+    <disable_collisions link1="plug_collision_model_link_3" link2="s_model_finger_middle_link_0" reason="Never" />
+    <disable_collisions link1="plug_collision_model_link_3" link2="s_model_finger_middle_link_1" reason="Never" />
+    <disable_collisions link1="plug_collision_model_link_3" link2="s_model_finger_middle_link_2" reason="Never" />
+    <disable_collisions link1="plug_collision_model_link_3" link2="s_model_finger_middle_link_3" reason="Never" />
+    <disable_collisions link1="plug_collision_model_link_3" link2="s_model_palm" reason="Never" />
+    <disable_collisions link1="plug_collision_model_link_3" link2="ur5_ee_link" reason="Adjacent" />
+    <disable_collisions link1="plug_collision_model_link_3" link2="plug_collision_model_link_1" reason="Never" />
+    <disable_collisions link1="plug_collision_model_link_3" link2="plug_collision_model_link_2" reason="Never" />
+    <!--disable_collisions link1="plug_collision_model_link_3" link2="ur5_wrist_1_link" reason="Never" />
+    <disable_collisions link1="plug_collision_model_link_3" link2="ur5_wrist_2_link" reason="Never" /-->
+    <disable_collisions link1="plug_collision_model_link_3" link2="ur5_wrist_3_link" reason="Never" />
     <disable_collisions link1="s_model_adapter" link2="s_model_finger_1_link_0" reason="Never" />
     <disable_collisions link1="s_model_adapter" link2="s_model_finger_1_link_1" reason="Never" />
     <disable_collisions link1="s_model_adapter" link2="s_model_finger_1_link_2" reason="Never" />

@@ -48,6 +48,29 @@
       <child link="${name}_link_2" />
       <parent link="${parent}"/>
     </joint>
+
+    <!-- usb hub -->
+    <link name="${name}_link_3">
+      <!-- TODO values for inertial are not correct -->
+      <inertial>
+        <mass value="0.2" />
+        <origin xyz="0.0 0.0 0.0" />
+        <inertia ixx="0.002708332" ixy="0.0" ixz="0.0"
+                 iyy="0.000708333" iyz="0.0"
+                 izz="0.003333332" />
+      </inertial>
+      <collision>
+        <origin xyz="0.025 -0.0 0.06" rpy="0.0 0.0 0.0" />
+        <geometry>
+          <box size="0.08 0.15 0.13"/>
+        </geometry>
+      </collision>
+    </link>
+    <joint name="${name}_link_3_joint" type="fixed">
+      <xacro:insert_block name="origin" />
+      <child link="${name}_link_3" />
+      <parent link="${parent}"/>
+    </joint>
   </xacro:macro>
 </robot>
 
