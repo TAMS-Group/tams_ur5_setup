@@ -3,7 +3,6 @@
     <!-- This argument enables using a customized configuration of the ur5 joint ranges.
          Example configuration files can be found inside tams_ur5_description under config/joint_ranges/. -->
     <arg name="ur5_joint_ranges_config" default="$(find tams_ur5_description)/config/joint_ranges/restricted.yaml"/>  <!-- default.yaml or restricted.yaml -->
-    <arg name="r200" default="false"/>
     <include file="$(find tams_ur5_setup_description)/launch/tams_ur5_setup_upload.launch">
         <arg name="joint_ranges_config" value="$(arg ur5_joint_ranges_config)"/>
     </include>
@@ -31,7 +30,6 @@
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true"
           output="screen"/>
 
-    <!-- add from tams robotiq gripper  -->
     <!-- Gripper -->
     <arg name="gripper_start_mode" default="basic"/>   <!-- basic or pinch -->
 
@@ -53,9 +51,5 @@
         <param name="serial_id" value="rfcomm1"/>
     </node>
 
-    <!-- add from tams robotiq gripper  -->
-
-    <include file="$(find tams_ur5_setup_moveit_config)/launch/move_group.launch">
-        <arg name="r200" value="$(arg r200)"/>
-    </include>
+    <include file="$(find tams_ur5_setup_moveit_config)/launch/move_group.launch"/>
 </launch>

@@ -2,8 +2,6 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
        name="arm" > 
 
-  <xacro:arg name="r200" default="false" />
-
   <!-- include macro definitions -->
   <xacro:include filename="$(find tams_ur5_description)/urdf/ur5.urdf.xacro" />
   <xacro:include filename="$(find robotiq_3f_gripper_visualization)/cfg/robotiq-3f-gripper_articulated_macro.xacro"/>
@@ -11,7 +9,6 @@
   <xacro:include filename="$(find tams_ur5_description)/urdf/ft_adapter.urdf.xacro" />
   <xacro:include filename="$(find tams_ur5_description)/urdf/s_model_adapter.urdf.xacro" />
   <xacro:include filename="$(find tams_ur5_description)/urdf/plug_collision_model.urdf.xacro" />
-  <xacro:include filename="$(find tams_ur5_description)/urdf/mounted_camera.urdf.xacro" />
 
   <!-- arm -->
   <!-- xamla_cap is a custom parameter in TAMS' fork of the universal_robot repository,
@@ -22,13 +19,6 @@
   <xacro:ft_adapter name="ft_adapter" parent="ur5_ee_link">
     <origin xyz="0.0045 0.0 0.0" rpy="0.0 ${pi/2} 0.0" />
   </xacro:ft_adapter>
-
-  <!-- mounted_camera -->
-  <xacro:if value="$(arg r200)">
-    <xacro:mounted_camera name="mounted_camera" parent="ft_adapter">
-        <origin xyz="0 0 0.0" rpy="0 0 0" />
-    </xacro:mounted_camera>
-  </xacro:if>
 
   <!-- ft150 -->
   <xacro:robotiq_fts150 prefix="ft_" parent="ur5_ee_link">
