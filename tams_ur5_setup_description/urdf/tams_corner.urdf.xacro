@@ -58,7 +58,9 @@
       <inertia  ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
     </inertial>
     <visual>
-      <material name="white" />
+      <material name="wall_mat">
+        <color rgba="1.0 1.0 1.0 0.4" />
+      </material>
       <origin xyz="-0.06 2.5 1.5" />
       <geometry>
         <box size="0.12 5.0 3.0" />
@@ -109,7 +111,9 @@
       <inertia  ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
     </inertial>
     <visual>
-      <material name="white" />
+      <material name="side_wall_mat">
+        <color rgba="1.0 1.0 1.0 0.4" />
+      </material>
       <origin xyz="0 0 0" />
       <geometry>
         <box size="5.0 0.12 3.0" />
@@ -139,7 +143,9 @@
       <inertia  ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
     </inertial>
     <visual>
-      <material name="white" />
+      <material name="small_wall_mat">
+        <color rgba="1.0 1.0 1.0 0.4" />
+      </material>
       <origin xyz="0 0 0" />
       <geometry>
               <box size="0.19 0.165 ${roomheight}" />
@@ -170,7 +176,9 @@
       <inertia  ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
     </inertial>
     <visual>
-      <material name="lightgray" />
+      <material name="cable_duct_mat">
+        <color rgba="0.7 0.7 0.7 0.4" />
+      </material>
       <origin xyz="0 0 0" />
       <geometry>
         <box size="0.13 0.06 ${roomheight}" />
@@ -237,7 +245,9 @@
       <inertia  ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
     </inertial>
     <visual>
-      <material name="lightgray" />
+      <material name="shelf_mat">
+        <color rgba="0.7 0.7 0.7 0.4" />
+      </material>
       <origin xyz="0 1.7 0" />
       <geometry>
         <box size="0.4 2 2.5" />
@@ -300,7 +310,9 @@
       <inertia  ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
     </inertial>
     <visual>
-      <material name="lightgray" />
+      <material name="clock_mat">
+        <color rgba="0.7 0.7 0.7 0.4" />
+      </material>
       <origin xyz="0 0 0" />
       <geometry>
         <cylinder length="0.06" radius="0.14"/>
