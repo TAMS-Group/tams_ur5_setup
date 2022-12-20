@@ -34,6 +34,6 @@
   <!-- <run_depend>joint_trajectory_controller</run_depend> -->
   <!-- <run_depend>gazebo_ros_control</run_depend> -->
   <!-- This package is referenced in the warehouse launch files, but does not build out of the box at the moment. Commented the dependency until this works. -->
-  <!-- <run_depend>warehouse_ros_mongo</run_depend> -->
+  <run_depend>warehouse_ros_sqlite</run_depend>
   <build_depend>tams_ur5_setup_description</build_depend>
 </package>
