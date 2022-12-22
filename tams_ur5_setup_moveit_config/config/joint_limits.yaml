@@ -1,9 +1,7 @@
 # joint_limits.yaml allows the dynamics properties specified in the URDF to be overwritten or augmented as needed
-# Specific joint properties can be changed with the keys [max_position, min_position, max_velocity, max_acceleration]
-# Joint limits can be turned off with [has_velocity_limits, has_acceleration_limits]
 
-# default scaling factors for MoveIt - These are independent and on top of the max velocities below
-# To move the robot at full speed by default, set the default_velocity_scaling_factor to 1.0 instead
+# For beginners, we downscale velocity and acceleration limits.
+# You can always specify higher scaling factors (<= 1.0) in your motion requests.  # Increase the values below to 1.0 to always move at maximum speed.
 default_acceleration_scaling_factor: 1.0
 default_velocity_scaling_factor: 0.2
 
@@ -16,6 +14,8 @@ max_arm_acceleration: &max_arm_acceleration
 max_finger_velocity: &max_finger_velocity
     max_velocity: 0.5
 
+# Specific joint properties can be changed with the keys [max_position, min_position, max_velocity, max_acceleration]
+# Joint limits can be turned off with [has_velocity_limits, has_acceleration_limits]
 joint_limits:
   s_model_finger_1_joint_1:
     has_velocity_limits: true
@@ -75,30 +75,30 @@ joint_limits:
   ur5_elbow_joint:
     has_velocity_limits: true
     <<: *max_arm_velocity
-    has_acceleration_limits: false
+    has_acceleration_limits: true
     <<: *max_arm_acceleration
   ur5_shoulder_lift_joint:
     has_velocity_limits: true
     <<: *max_arm_velocity
-    has_acceleration_limits: false
+    has_acceleration_limits: true
     <<: *max_arm_acceleration
   ur5_shoulder_pan_joint:
     has_velocity_limits: true
     <<: *max_arm_velocity
-    has_acceleration_limits: false
+    has_acceleration_limits: true
     <<: *max_arm_acceleration
   ur5_wrist_1_joint:
     has_velocity_limits: true
     <<: *max_arm_velocity
-    has_acceleration_limits: false
+    has_acceleration_limits: true
     <<: *max_arm_acceleration
   ur5_wrist_2_joint:
     has_velocity_limits: true
     <<: *max_arm_velocity
-    has_acceleration_limits: false
+    has_acceleration_limits: true
     <<: *max_arm_acceleration
   ur5_wrist_3_joint:
     has_velocity_limits: true
     <<: *max_arm_velocity
-    has_acceleration_limits: false
+    has_acceleration_limits: true
     <<: *max_arm_acceleration
