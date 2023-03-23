@@ -6,6 +6,8 @@
   <xacro:include filename="$(find tams_ur5_setup_description)/urdf/tams_corner.urdf.xacro" />
   <!-- arm -->
   <xacro:include filename="$(find tams_ur5_description)/urdf/arm.urdf.xacro" />
+  <!-- table -->
+  <xacro:include filename="$(find tams_ur5_setup_description)/urdf/table.urdf.xacro" />
 
   <link name="world" />
 
@@ -27,5 +29,13 @@
     <parent link="ur5_mount" />
     <child link = "ur5_base_link" />
     <origin xyz="0 0 0.003" rpy="0.0 0.0 ${pi/2}" />
+  </joint>
+
+  <joint name="table_joint" type="fixed">
+    <parent link="floor"/>
+    <child link="table"/>
+    <!-- actual wall is 2.5cm further back from table, but is modelled at the position of the small ur5 adapter plate -->
+   <!-- <origin xyz="0.73 0.30 0" rpy="0 0 0" /> -->
+    <origin xyz="0.89 0.74 0" rpy="0 0 0" />
   </joint>
 </robot>

@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"
+       name="tams_ur5_table" > 
+  <xacro:property name="tableheight" value="0.78" />
+  <xacro:property name="tablewidth" value="1.00" />
+  <xacro:property name="tabledepth" value="0.80" />
+
+  <xacro:property name="tabletag_size" value="0.20" />
+
+  <link name="table">
+    <inertial>
+      <origin xyz="0 0 ${tableheight/2}" />
+      <mass value="10" />
+      <inertia  ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+    </inertial>
+    <visual>
+      <material name="brown" />
+      <origin xyz="0 0 ${tableheight/2}" />
+      <geometry>
+        <box size="0.80 1.0 ${tableheight}" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 ${tableheight/2}" />
+      <geometry>
+        <box size="0.80 1.0 ${tableheight}" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="table">
+    <material>Gazebo/Blue</material>
+    <turnGravityOff>false</turnGravityOff>
+    <selfCollide>true</selfCollide>
+    <!-- kp: stiffness kd: damping mu1, mu2: friction -->
+    <mu1>100.0</mu1>
+    <mu2>100.0</mu2>
+    <kp>1000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+
+  <link name="table_top"/>
+
+  <joint name="table_top_joint" type="fixed">
+    <parent link="table"/>
+    <child link="table_top"/>
+    <origin xyz="0 0 ${tableheight}" rpy="0 0 0"/>
+  </joint>
+
+  <link name="table_tag"/>
+
+  <joint name="table_tag_joint" type="fixed">
+    <parent link="table_top"/>
+    <child link="table_tag"/>
+    <origin xyz="${tabledepth/2-tabletag_size/2} ${tablewidth/2-tabletag_size/2} 0" rpy="0 0 ${pi}"/>
+  </joint>
+
+</robot>
