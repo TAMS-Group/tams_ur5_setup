@@ -3,10 +3,7 @@
        name="tams_ur5_setup" > 
   
   <!-- tams corner -->
-  <xacro:include filename="$(find tams_ur5_setup_description)/urdf/tams_corner.urdf.xacro">
-  <!-- <xacro:arg name="floating_table" value="$(arg floating_table)" />-->
-  <!-- the above argument is ignored by xacro! if you want to use this argument, try another way -->
-  </xacro:include>
+  <xacro:include filename="$(find tams_ur5_setup_description)/urdf/tams_corner.urdf.xacro" />
   <!-- arm -->
   <xacro:include filename="$(find tams_ur5_description)/urdf/arm.urdf.xacro" />
 
