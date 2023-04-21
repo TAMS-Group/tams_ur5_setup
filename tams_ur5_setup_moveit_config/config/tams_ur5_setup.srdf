@@ -232,14 +232,6 @@
         <joint name="ur5_wrist_2_joint" value="0"/>
         <joint name="ur5_wrist_3_joint" value="0"/>
     </group_state>
-    <group_state name="start_grab_pose" group="arm">
-        <joint name="ur5_elbow_joint" value="-1.392"/>
-        <joint name="ur5_shoulder_lift_joint" value="-0.4279"/>
-        <joint name="ur5_shoulder_pan_joint" value="1.7597"/>
-        <joint name="ur5_wrist_1_joint" value="-1.3206"/>
-        <joint name="ur5_wrist_2_joint" value="1.3816"/>
-        <joint name="ur5_wrist_3_joint" value="1.57078"/>
-    </group_state>
     <group_state name="gpd_starting_pose" group="arm">
         <joint name="ur5_elbow_joint" value="-1.1056"/>
         <joint name="ur5_shoulder_lift_joint" value="-1.8764"/>
