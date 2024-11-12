@@ -5,14 +5,15 @@
 #
 # Limits that align with the robots joint limits (+/- 2*pi) may allow
 # joint configurations that lead to protective stop.
-# To prevent that we substract a safety tolerance of 0.002.
+# To prevent that we subtract a safety tolerance of 0.002.
+
 shoulder_pan_joint:
     lower: -3.1415926
-    upper: 1.570796    
+    upper: 1.570796
 shoulder_lift_joint:
     lower: -4.7123890
     upper: -1.1606440
-elbow_joint: 
+elbow_joint:
     lower: -3.1415926
     upper: 0.0
 wrist_1_joint:

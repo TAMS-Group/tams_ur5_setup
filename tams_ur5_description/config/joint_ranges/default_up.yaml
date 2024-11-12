@@ -10,11 +10,11 @@
 # To prevent that we subtract a safety margin of 0.002.
 
 shoulder_pan_joint:
-    lower: -6.2811853
-    upper: 6.2811853
+    lower: -2.7
+    upper: 2.7
 shoulder_lift_joint:
-    lower: -6.2811853
-    upper: 6.2811853
+    lower: -3.3
+    upper: 0.2
 elbow_joint:
     lower: -3.1415926
     upper: 3.1415926
