@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
-       name="tams_ur5_table" > 
+       name="tams_ur5_table" >
   <xacro:property name="tableheight" value="0.78" />
   <xacro:property name="tablewidth" value="1.00" />
   <xacro:property name="tabledepth" value="0.80" />
@@ -17,13 +17,13 @@
       <material name="brown" />
       <origin xyz="0 0 ${tableheight/2}" />
       <geometry>
-        <box size="0.80 1.0 ${tableheight}" />
+        <box size="${tabledepth} ${tablewidth} ${tableheight}" />
       </geometry>
     </visual>
     <collision>
       <origin xyz="0 0 ${tableheight/2}" />
       <geometry>
-        <box size="0.80 1.0 ${tableheight}" />
+        <box size="${tabledepth} ${tablewidth} ${tableheight}" />
       </geometry>
     </collision>
   </link>
