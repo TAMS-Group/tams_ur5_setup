@@ -1,14 +1,31 @@
 arm:
-  kinematics_solver: bio_ik/BioIKKinematicsPlugin
+  # kinematics_solver: bio_ik/BioIKKinematicsPlugin
+  kinematics_solver: trac_ik_kinematics_plugin/TRAC_IKKinematicsPlugin
+  # kinematics_solver: ur_kinematics/UR5KinematicsPlugin
   kinematics_solver_search_resolution: 0.005
-  kinematics_solver_timeout: 0.02
   kinematics_solver_timeout: 0.02
 
   # bio_ik - gradient-decent without restarts - usually the best choice in weakly-constraint environments
-  mode: gd_c
+  # mode: gd_c
 
-  # tracik - prefer closeby solutions
-  #solve_type: Distance
+  # tracik - prefer close solutions
+  # solve_type: Distance
 
   # ur kinematics - correct joint prefix
-  #arm_prefix: ur5_
+  # arm_prefix: ur5_
+
+arm_norestart:
+  kinematics_solver: bio_ik/BioIKKinematicsPlugin
+  # kinematics_solver: trac_ik_kinematics_plugin/TRAC_IKKinematicsPlugin
+  # kinematics_solver: ur_kinematics/UR5KinematicsPlugin
+  kinematics_solver_search_resolution: 0.005
+  kinematics_solver_timeout: 0.02
+  kinematics_solver_timeout: 0.02
+  mode: gd_c
+
+arm_closest_ik:
+  kinematics_solver: trac_ik_kinematics_plugin/TRAC_IKKinematicsPlugin
+  kinematics_solver_search_resolution: 0.005
+  kinematics_solver_timeout: 0.02
+  kinematics_solver_timeout: 0.02
+  solve_type: Distance
