@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
   <!-- Specifies the joint ranges of the ur5 that should be used in the URDF -->
-  <arg name="ur5_joint_ranges_config" default="$(find tams_ur5_description)/config/joint_ranges/default.yaml" />
+  <arg name="joint_limits_parameters_file" default="$(find tams_ur5_description)/config/joint_ranges/default.yaml" />
 
   <!-- GDB Debug Option -->
   <arg name="debug" default="false" />
@@ -47,7 +47,7 @@
   <!-- load URDF, SRDF and joint_limits configuration -->
   <include file="$(dirname)/planning_context.launch">
     <arg name="load_robot_description" value="$(arg load_robot_description)" />
-    <arg name="ur5_joint_ranges_config" value="$(arg ur5_joint_ranges_config)" />
+    <arg name="joint_limits_parameters_file" value="$(arg joint_limits_parameters_file)" />
   </include>
 
   <!-- Planning Pipelines -->

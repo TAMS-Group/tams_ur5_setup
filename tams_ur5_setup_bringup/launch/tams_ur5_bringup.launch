@@ -2,9 +2,9 @@
 <launch>
     <!-- This argument enables using a customized configuration of the ur5 joint ranges.
          Example configuration files can be found inside tams_ur5_description under config/joint_ranges/. -->
-    <arg name="ur5_joint_ranges_config" default="$(find tams_ur5_description)/config/joint_ranges/restricted.yaml"/>  <!-- default.yaml or restricted.yaml -->
+	 <arg name="ur5_joint_limits_parameters_file" default="$(find tams_ur5_description)/config/joint_ranges/default.yaml"/>
     <include file="$(find tams_ur5_setup_description)/launch/tams_ur5_setup_upload.launch">
-        <arg name="joint_ranges_config" value="$(arg ur5_joint_ranges_config)"/>
+        <arg name="joint_limits_parameters_file" value="$(arg ur5_joint_limits_parameters_file)"/>
     </include>
 
     <include file="$(find ur_robot_driver)/launch/ur_control.launch">
@@ -13,8 +13,8 @@
         <arg name="robot_ip" value="192.168.1.12"/>
         <arg name="controllers" default="pos_joint_traj_controller joint_state_controller"/>
         <arg name="stopped_controllers" default="joint_group_vel_controller"/>
-        <arg name="controller_config_file" value="$(find tams_ur5_setup_description)/config/ur5_controllers.yaml"/>
-        <arg name="kinematics_config" value="$(find tams_ur5_setup_description)/config/tams_ur5_calibration.yaml"/>
+        <arg name="controller_config_file" value="$(find tams_ur5_setup_bringup)/config/ur_robot_driver/ur5_controllers.yaml"/>
+        <arg name="kinematics_config" value="$(find tams_ur5_description)/config/tams_ur5_calibration.yaml"/>
         <arg name="use_tool_communication" value="false"/>
 
         <!-- detail: https://github.com/TAMS-Group/Universal_Robots_ROS_Driver/commit/0833aa340f751909f759aa2e153e69da1a1494fa-->
